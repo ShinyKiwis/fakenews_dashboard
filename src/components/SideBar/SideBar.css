@@ -12,6 +12,7 @@
     flex-direction: column;
     gap: 4em;
     color: white;
+    z-index: 2;
 }
 
 .sidebar h3 {
