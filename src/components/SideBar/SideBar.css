@@ -1,0 +1,57 @@
+.sidebar {
+    position: absolute;
+    padding: 0.6em;
+    width: 6em;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #414755;
+    transition: 0.5s;
+    display: flex;
+    flex-direction: column;
+    gap: 4em;
+    color: white;
+}
+
+.sidebar h3 {
+    margin: 0;
+    white-space: nowrap;
+}
+
+.sidebar:hover {
+    width: 18.4em;
+    transition: 0.5s;
+}
+
+.sidebar:hover .sidebar_item {
+    gap: 0.4em;
+    margin-right: auto;
+}
+
+.sidebar_item {
+    display: flex;
+    align-items: center;
+    padding-left: 1.4em;
+    cursor: pointer;
+}
+
+.sidebar_img {
+    width: 3em;
+    height: auto;
+}
+
+.logo {
+    width: 5em;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4em;
+    padding: 0.5em 0.4em;
+}
+
+.logo img{
+    width: 2.5em;
+    height: auto;
+}
