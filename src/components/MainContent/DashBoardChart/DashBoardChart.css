@@ -1,0 +1,22 @@
+.specificCenterLabel
+{
+    font-size: 0.85em
+}
+
+.commonCenterLabel
+{
+    font-size: 0.85em
+}
+
+.column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 33.33%;
+}
+  
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
