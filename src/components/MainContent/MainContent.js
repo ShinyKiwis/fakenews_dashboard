@@ -19,11 +19,10 @@ const thirdChartData = [
   { title: "Unverified", value: 15566, color: "#414755" },
 ];
 
-const MainContent = () => {
+const MainContent = ({children}) => {
   return (
     <div className="container">
-      <br />
-      <div class="row">
+      {/*<div class="row">
         <div class="column">
           <DashBoardChart data={firstChartData} />
         </div>
@@ -33,7 +32,8 @@ const MainContent = () => {
         <div class="column">
           <DashBoardChart data={thirdChartData} />
         </div>
-      </div>
+      </div>*/}
+      {children}
     </div>
   );
 };

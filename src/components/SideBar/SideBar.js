@@ -4,19 +4,19 @@ import { useState } from "react"
 
 const SideBarItem = ({ Item, page, onHover }) => {
     return (
-        <div className="sidebar_item">
-            {<Item className="sidebar_img" />}
-            <h3 style={onHover ? { "display": "block" } : { "display": "none" }}>{page}</h3>
-        </div>
+      <div className="sidebar_item">
+        {<Item className="sidebar_img" />}
+        <h3 style={onHover ? { "display": "block" } : { "display": "none" }}>{page}</h3>
+      </div>
     )
 }
 
 const Logo = () => {
     return (
-        <div className="logo">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/d/de/HCMUT_official_logo.png" />
-            <img src="https://pbs.twimg.com/media/DeR4fWPXkAAPBxT.png:large" />
-        </div>
+      <div className="logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/de/HCMUT_official_logo.png" />
+        <img src="https://pbs.twimg.com/media/DeR4fWPXkAAPBxT.png:large" />
+      </div>
     )
 }
 
