@@ -41,6 +41,9 @@
     width: 3em;
     height: auto;
 }
+.sidebar a{
+    color:white;
+}
 
 .logo {
     width: 5em;

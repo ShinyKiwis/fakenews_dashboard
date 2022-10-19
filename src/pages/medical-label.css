@@ -1,0 +1,146 @@
+body{
+    background-color: aliceblue !important; 
+}
+hr{
+    width:90%;
+}
+.container{
+    margin-top:20px;
+}
+.row{
+    display:flex;
+}
+.post{
+    background-color: white;
+    width:700px;
+    height:auto;
+    margin-left:100px;
+    border-radius: 20px;
+}
+.top{
+    display: flex;
+    margin-left: 20px;
+    padding-top:20px;
+}
+.top img{
+    border-radius: 30px;
+}
+.top p{
+    width:300px;
+    margin-left:10px;
+    margin-top:0px;
+    padding-top:5px;
+    font-weight: bold;
+
+}
+
+.content {
+    padding: 0px 20px;
+}
+
+.bottom{
+    padding:0px 30px;
+}
+.bottom img {
+    padding:0px 0px;
+    margin:0px 15px;
+}
+.commentarea{
+    display: flex;
+    margin-top:15px;
+}
+.cmtavatar{
+    border-radius: 30px;
+    margin-left:15px;
+}
+.comment{
+    width:580px;
+    height:auto;
+    background-color: lightgrey;
+    border-radius: 30px;
+    padding:0px 10px;
+    margin-left:15px;
+}
+.comment p{
+    padding:0px;
+    margin-top:5px;
+}
+
+
+.label{
+    justify-content: center;
+    text-align: center;
+    background-color: #46434c;
+    width:300px;
+    height:700px;
+    margin-left:20px;
+    border-radius: 20px;
+
+}
+.label p{
+    color:white;
+    font-size:20px;
+    float:left;
+    padding-left:15px;
+}
+.label button{
+    border-radius: 20px;
+    width:280px;
+    height:110px;
+    margin-left:0px;
+}
+.label button p{
+    font-size:40px;
+    font-weight:bold;
+    margin-top:0px;
+    float:left;
+}
+.label button h5{
+    font-size:15px;
+    font-weight:bold;
+    margin-top:-35px;
+    color:white;
+    float:left;
+}
+.medical{
+    margin-top:10px;
+    background-color:#0e49df;
+}
+.medical p:after {
+    content: " Medical";
+}
+.medical:hover p:after{
+    content: "YES";
+}
+.nonmed{
+    margin-top:5px;
+    background-color: cyan;
+}
+.nonmed p:after {
+    content: " Nonmed";
+}
+.nonmed:hover p:after{
+    content: "YES";
+}
+.skip{
+    margin-top:5px;
+    background-color:lightgrey;
+}
+.skip p:after {
+    content: " Skip";
+}
+.skip:hover p:after{
+    content: "YES";
+}
+.icon-area{
+    float:left;
+    margin-left:30px;
+}
+.label .icon{
+    margin:30px 5px;
+    float:left;
+    width:50px;
+    height:50px;
+    background-color: white;
+    border-radius: 30px;
+}

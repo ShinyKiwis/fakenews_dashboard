@@ -27,12 +27,12 @@ const SideBar = () => {
             <div style={{"display": "flex", "alignItems": "center"}}>
                 <Logo />
             </div>
-            <SideBarItem Item={MdHomeFilled} page="Home" onHover={onHover} />
-            <SideBarItem Item={MdOutlineArticle} page="News" onHover={onHover} />
-            <SideBarItem Item={MdOutlineMedicalServices} page="Medical Labeling" onHover={onHover} />
-            <SideBarItem Item={MdOutlineLiveHelp} page="Medical News Check" onHover={onHover} />
-            <SideBarItem Item={MdRule} page="News/Question Labeling" onHover={onHover} />
-            <SideBarItem Item={MdOutlineFileDownload} page="Export" onHover={onHover} />
+            <a><SideBarItem Item={MdHomeFilled} page="Home" onHover={onHover} /></a>
+            <a><SideBarItem Item={MdOutlineArticle} page="News" onHover={onHover} /></a>
+            <a href='label'><SideBarItem Item={MdOutlineMedicalServices} page="Medical Labeling" onHover={onHover} /></a>
+            <a><SideBarItem Item={MdOutlineLiveHelp} page="Medical News Check" onHover={onHover} /></a>
+            <a><SideBarItem Item={MdRule} page="News/Question Labeling" onHover={onHover} /></a>
+            <a><SideBarItem Item={MdOutlineFileDownload} page="Export" onHover={onHover} /></a>
 
         </div>
     )
