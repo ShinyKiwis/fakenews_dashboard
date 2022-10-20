@@ -13,7 +13,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={ <Dashboard />} />
-            <Route path="/label" element={ <Medical_label />} />
+            <Route path="/med-label" element={ <Medical_label />} />
           </Routes>
         </BrowserRouter> 
       </MainContent>

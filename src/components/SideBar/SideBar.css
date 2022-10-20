@@ -10,9 +10,15 @@
     transition: 0.5s;
     display: flex;
     flex-direction: column;
-    gap: 4em;
+    gap: 3.5em;
     color: white;
     z-index: 2;
+}
+
+.sidebar_link {
+    text-decoration: none;
+    color: white;
+    width: fit-content;
 }
 
 .sidebar h3 {
@@ -38,11 +44,8 @@
 }
 
 .sidebar_img {
-    width: 3em;
+    width: 2.5em;
     height: auto;
-}
-.sidebar a{
-    color:white;
 }
 
 .logo {

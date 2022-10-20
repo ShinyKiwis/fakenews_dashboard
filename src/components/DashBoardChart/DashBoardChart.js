@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Text from "react-svg-text";
 import "./DashBoardChart.css";
-import Pill from "../../Commons/Pill";
+import Pill from "../Common/Pill";
 import { PieChart } from "react-minimal-pie-chart";
 
 function DashBoardChart(props) {

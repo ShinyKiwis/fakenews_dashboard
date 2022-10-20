@@ -1,3 +1,10 @@
+/* 
+  medical - #1f5fe0
+  nonmed - #5acedf
+  notnews - #ffc300
+  news - 
+*/
+
 const Pill = ({ type, size }) => {
   const width = size;
   const height = (size * 45) / 143;

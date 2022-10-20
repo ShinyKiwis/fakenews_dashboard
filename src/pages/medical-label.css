@@ -1,6 +1,7 @@
 body{
     background-color: aliceblue !important; 
 }
+
 hr{
     width:90%;
 }
@@ -14,7 +15,7 @@ hr{
     background-color: white;
     width:700px;
     height:auto;
-    margin-left:100px;
+    margin-left:150px;
     border-radius: 20px;
 }
 .top{
@@ -73,9 +74,9 @@ hr{
     background-color: #46434c;
     width:300px;
     height:700px;
-    margin-left:20px;
+    margin-left:auto;
+    margin-right: 4em;
     border-radius: 20px;
-
 }
 .label p{
     color:white;
