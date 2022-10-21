@@ -1,10 +1,14 @@
-.graphics
-{
-    width: 143;
-    height: 45;
+.pill_container {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  border-radius: 1.2em;
+  padding: 0.4em 0.8em;
+  color: white;
+  font-weight: 500;
 }
 
-.text
-{
-    font-size: 12px;
+
+.pill_container span {
+  white-space: nowrap;
 }

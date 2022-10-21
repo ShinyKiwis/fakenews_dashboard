@@ -92,15 +92,15 @@ function DashBoardChart(props) {
         }}
       />
 
-      <div class="row">
-        <div class="column" style={{ padding: "1em" }}>
-          <Pill type={data[2].title} size="100" />
+      <div class="labels">
+        <div class="column">
+          <Pill type={data[2].title} color={data[2].color}/>
         </div>
-        <div class="column" style={{ padding: "1em" }}>
-          <Pill type={data[1].title} size="100" />
+        <div class="column">
+          <Pill type={data[1].title} color={data[1].color} mid={true} />
         </div>
-        <div class="column" style={{ padding: "1em" }}>
-          <Pill type={data[0].title} size="100" />
+        <div class="column">
+          <Pill type={data[0].title} color={data[0].color}/>
         </div>
       </div>
     </div>

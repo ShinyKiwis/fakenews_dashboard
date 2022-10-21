@@ -12,11 +12,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 33.33%;
 }
   
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
+.labels {
+    margin-top: -2em;
+    display: flex;
+    gap: 1em;
 }
