@@ -85,7 +85,7 @@ hr {
     background-color: #46434c;
     width: 300px;
     height: 700px;
-    margin-left: auto;
+    margin-left: 30px;
     margin-right: 4em;
     border-radius: 20px;
 }
@@ -118,9 +118,13 @@ hr {
     color: white;
     float: left;
 }
-
+/*Medical and nonmed*/
 .medical {
     margin-top: 10px;
+    background-color: #0e49df;
+    padding-top:15px;
+}
+.medical:hover {
     background-color: #0e49df;
 }
 
@@ -129,12 +133,17 @@ hr {
 }
 
 .medical:hover p:after {
-    content: "YES";
+    content: "Yes";
+
 }
 
 .nonmed {
     margin-top: 5px;
     background-color: cyan;
+    padding-top:15px;
+}
+.nonmed:hover {
+    background-color: #0e49df;
 }
 
 .nonmed p:after {
@@ -142,12 +151,16 @@ hr {
 }
 
 .nonmed:hover p:after {
-    content: "YES";
+    content: "Yes";
 }
 
 .skip {
     margin-top: 5px;
     background-color: lightgrey;
+    padding-top:15px;
+}
+.skip:hover {
+    background-color: #0e49df;
 }
 
 .skip p:after {
@@ -155,9 +168,80 @@ hr {
 }
 
 .skip:hover p:after {
-    content: "YES";
+    content: "Yes";
 }
 
+/*True or false*/
+.true {
+    margin-top: 10px;
+    background-color: #2ae426;
+    padding-top:15px;
+}
+.true:hover {
+    background-color: #0e49df;
+}
+
+.true p:after {
+    content: " True";
+}
+
+.true:hover p:after {
+    content: "Yes";
+}
+
+.false {
+    margin-top: 5px;
+    background-color: rgb(240, 35, 32);
+    padding-top:15px;
+}
+.false:hover {
+    background-color: #0e49df;
+}
+
+.false p:after {
+    content: "False";
+}
+
+.false:hover p:after {
+    content: "Yes";
+}
+
+/*News or question*/
+.news {
+    margin-top: 10px;
+    background-color: #9a21b6;
+    padding-top:15px;
+}
+.news:hover {
+    background-color: #0e49df;
+}
+
+.news p:after {
+    content: " News";
+}
+
+.news:hover p:after {
+    content: "Yes";
+}
+
+.notnews {
+    margin-top: 5px;
+    background-color: rgb(240, 223, 32);
+    padding-top:15px;
+}
+.notnews:hover {
+    background-color: #0e49df;
+}
+
+.notnews p:after {
+    content: "Not News";
+}
+
+.notnews:hover p:after {
+    content: "Yes";
+}
+
+/*Icon*/
 .icon-area {
     float: left;
     margin-left: 30px;

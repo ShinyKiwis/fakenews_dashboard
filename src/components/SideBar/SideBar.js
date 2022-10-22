@@ -32,8 +32,8 @@ const SideBar = () => {
       <SideBarItem Item={MdHomeFilled} page="Home" onHover={onHover} href="/" />
       <SideBarItem Item={MdOutlineArticle} page="News" onHover={onHover} href="/" />
       <SideBarItem Item={MdOutlineMedicalServices} page="Medical Labeling" onHover={onHover} href="med-label" />
-      <SideBarItem Item={MdOutlineLiveHelp} page="Medical News Check" onHover={onHover} href="/" />
-      <SideBarItem Item={MdRule} page="News/Question Labeling" onHover={onHover} href="/" />
+      <SideBarItem Item={MdOutlineLiveHelp} page="Medical News Check" onHover={onHover} href="med-news-label" />
+      <SideBarItem Item={MdRule} page="News/Question Labeling" onHover={onHover} href="news-label" />
       <SideBarItem Item={MdOutlineFileDownload} page="Export" onHover={onHover} href="export" />
     </div>
   )

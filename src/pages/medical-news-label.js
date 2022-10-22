@@ -3,7 +3,7 @@ import { dict, comment } from '../components/Labeling/Data.js'
 import { FaRobot, FaPen, FaHistory, FaRegFlag, FaInfoCircle } from "react-icons/fa";
 
 
-function Medical_label() {
+function Medicalnews_label() {
     const actions = ["like", "love", "care", "haha", "wow", "sad", "angry", "comment", "share"]
     return (
         <div>
@@ -56,18 +56,18 @@ function Medical_label() {
                     </div>
                 </div>
                 <div className="label">
-                    <p>Is this news medical ?</p>
-                    <button className="medical"><p></p><h5>This news is medical-related</h5></button>
-                    <button className="nonmed"><p></p><h5>This news is not medical-related</h5></button>
+                    <p>Is this medical news correct ?</p>
+                    <button className="true"><p></p><h5>This news is medically correct</h5></button>
+                    <button className="false"><p></p><h5>This news is not medically incorrect</h5></button>
                     <button className="skip"><p></p><h5>Additional information is required</h5></button>
 
                     <hr style={{ padding: '40px 5px', borderRadius: '5px', marginTop:'30px' }}></hr>
                     <div style={{ marginTop: '-85px' }}>
                         <FaRobot style={{ color: 'white', fontSize: '40px', float: 'left', padding: '10px 15px' }} />
                         <p style={{ color: 'white', fontSize: '12px' }}>ML classìication suggests that this is </p>
-                        <p style={{ color: 'white', fontSize: '30px', margin: '-15px 0px 0px 5px' }}>Nonmed</p>
+                        <p style={{ color: 'white', fontSize: '30px', margin: '-15px 0px 0px 5px' }}>False</p>
                     </div>
-                    
+
                     <div className="icon-area">
                         <div className="icon">< FaPen style={{ fontSize: '20px', float: 'left', margin: '15px 15px' }} /></div>
                         <div className="icon">< FaHistory style={{ fontSize: '20px', float: 'left', margin: '15px 15px' }} /></div>
@@ -79,4 +79,4 @@ function Medical_label() {
         </div>
     )
 }
-export default Medical_label;
+export default Medicalnews_label;
