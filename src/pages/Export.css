@@ -1,0 +1,58 @@
+.wrapper {
+    justify-content: center;
+    display: flex;
+}
+
+.box {
+    justify-content: center;
+    display: flex;
+    margin-top: 60px;
+    background-color: white;
+    width: 1200px;
+    height: 650px;
+}
+
+.box-left {
+    justify-content: center;
+    width: 590px;
+    height: 600px;
+
+}
+
+.box-right {
+    justify-content: center;
+    width: 590px;
+    height: 600px;
+
+
+}
+
+.export {
+    margin-top: 100px;
+    text-align: center;
+    font-size: 100px;
+}
+
+.all-file1 {
+    justify-content: center;
+    display: flex;
+    width: 600px;
+    border-right: 2px solid black;
+}
+
+.all-file2 {
+    justify-content: center;
+    display: flex;
+    width: 600px;
+}
+
+.file {
+    font-size: 100px;
+    background-color: #414755;
+    color: white;
+    margin: 5px 10px;
+    width: 220px;
+    height: 220px;
+    border-radius: 15px;
+    text-align: center;
+}

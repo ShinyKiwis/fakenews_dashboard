@@ -25,7 +25,7 @@ function Medical_label() {
                     <hr></hr>
                     <div className="bottom">
                         {actions.map(action => (
-                            <img 
+                            <img
                                 src={`emotions/${action}.png`}
                                 alt="emotion_icon"
                                 width={40}

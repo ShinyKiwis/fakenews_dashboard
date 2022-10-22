@@ -34,7 +34,7 @@ const SideBar = () => {
       <SideBarItem Item={MdOutlineMedicalServices} page="Medical Labeling" onHover={onHover} href="med-label" />
       <SideBarItem Item={MdOutlineLiveHelp} page="Medical News Check" onHover={onHover} href="/" />
       <SideBarItem Item={MdRule} page="News/Question Labeling" onHover={onHover} href="/" />
-      <SideBarItem Item={MdOutlineFileDownload} page="Export" onHover={onHover} href="/" />
+      <SideBarItem Item={MdOutlineFileDownload} page="Export" onHover={onHover} href="export" />
     </div>
   )
 
