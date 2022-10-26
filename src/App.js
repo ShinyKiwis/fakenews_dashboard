@@ -9,7 +9,12 @@ import News_label from './pages/news-label';
 import Export from './pages/Export';
 import Login from './pages/Login';
 
+
 function App() {
+
+  if(false) {
+    return <Login />
+  }
   return (
     <div>
       <SideBar />
@@ -21,7 +26,6 @@ function App() {
             <Route path="/med-news-label" element={<Medicalnews_label />} />
             <Route path="/news-label" element={<News_label />} />
             <Route path="/export" element={<Export />} />
-            <Route path="/login" element={<Login />} />
           </Routes>
         </BrowserRouter>
       </MainContent>
