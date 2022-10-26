@@ -7,6 +7,7 @@ import Medical_label from './pages/medical-label';
 import Medicalnews_label from './pages/medical-news-label';
 import News_label from './pages/news-label';
 import Export from './pages/Export';
+import Login from './pages/Login';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Route path="/med-news-label" element={<Medicalnews_label />} />
             <Route path="/news-label" element={<News_label />} />
             <Route path="/export" element={<Export />} />
+            <Route path="/login" element={<Login />} />
           </Routes>
         </BrowserRouter>
       </MainContent>
