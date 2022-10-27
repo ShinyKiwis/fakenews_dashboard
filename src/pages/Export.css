@@ -23,8 +23,6 @@
     justify-content: center;
     width: 590px;
     height: 600px;
-
-
 }
 
 .export {
@@ -37,7 +35,7 @@
     justify-content: center;
     display: flex;
     width: 600px;
-    border-right: 2px solid black;
+    border-right: 2px solid #2A344E;
 }
 
 .all-file2 {
@@ -48,11 +46,31 @@
 
 .file {
     font-size: 100px;
-    background-color: #414755;
-    color: white;
     margin: 5px 10px;
     width: 220px;
     height: 220px;
-    border-radius: 15px;
+    border-radius: 10px;
+    border-color: #2A344E;
+    color: #2A344E;
+    border-width: 5px;
     text-align: center;
+    background-color: transparent;
+    transition-duration: 0.4s;
+}
+
+.export-type
+{
+    font-weight: 500;
+    font-size: 30px;
+    margin-top: -5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #2A344E;
+}
+
+.export-file-type
+{
+    font-weight: normal;
+    font-size: 30px;
+    margin-top: -5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }

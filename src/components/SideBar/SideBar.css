@@ -1,13 +1,13 @@
 .sidebar {
-    position: absolute;
+    position: fixed;
     padding: 0.6em;
     width: 6em;
     left: 0;
     top: 0;
     right: 0;
     bottom: 0;
-    background-color: #414755;
-    transition: 0.5s;
+    background-color: #2A344E;
+    transition: all 0.25s;
     display: flex;
     flex-direction: column;
     gap: 3.5em;
@@ -24,11 +24,12 @@
 .sidebar h3 {
     margin: 0;
     white-space: nowrap;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: normal;
 }
 
 .sidebar:hover {
     width: 18.4em;
-    transition: 0.5s;
 }
 
 .sidebar:hover .sidebar_item {

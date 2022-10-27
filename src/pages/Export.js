@@ -8,36 +8,36 @@ function Export() {
             <div className="box">
                 <div className="box-left">
                     <div className="export">
-                        <FaRegNewspaper />
-                        <p style={{ fontWeight: 'bold', fontSize: '30px', marginTop: '-5px' }}> Export News </p>
+                        <FaRegNewspaper style={{color: "#2A344E"}}/>
+                        <p className="export-type"> Export News </p>
                     </div>
                     <div className="all-file1">
                         <form>
                             <button className="file">
                                 <FaAlignLeft style={{ marginTop: '40px' }} />
-                                <p style={{ fontWeight: 'bold', fontSize: '30px', marginTop: '-5px' }}> As CSV </p>
+                                <p className="export-file-type"> As CSV </p>
                             </button>
                             <button className="file">
                                 <FaRegWindowMaximize style={{ marginTop: '40px' }} />
-                                <p style={{ fontWeight: 'bold', fontSize: '30px', marginTop: '-5px' }}> As JSON </p>
+                                <p className="export-file-type"> As JSON </p>
                             </button>
                         </form>
                     </div>
                 </div>
                 <div className="box-right">
                     <div className="export">
-                        <FaRegCommentAlt />
-                        <p style={{ fontWeight: 'bold', fontSize: '30px', marginTop: '-5px' }}> Export Comments</p>
+                        <FaRegCommentAlt style={{color: "#2A344E"}}/>
+                        <p className="export-type"> Export Comments</p>
                     </div>
                     <div className="all-file2">
                         <form>
                             <button className="file">
                                 <FaAlignLeft style={{ marginTop: '40px' }} />
-                                <p style={{ fontWeight: 'bold', fontSize: '30px', marginTop: '-5px' }}> As CSV </p>
+                                <p className="export-file-type"> As CSV </p>
                             </button>
                             <button className="file">
                                 <FaRegWindowMaximize style={{ marginTop: '40px' }} />
-                                <p style={{ fontWeight: 'bold', fontSize: '30px', marginTop: '-5px' }}> As JSON </p>
+                                <p className="export-file-type"> As JSON </p>
                             </button>
                         </form>
                     </div>
