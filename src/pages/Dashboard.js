@@ -1,4 +1,18 @@
 import DashBoardChart from "../components/DashBoardChart/DashBoardChart";
+import DashboardStyle from "./Dashboard.module.css"
+
+const DashBoardItem = ({index, group}) => {
+  return (
+    <tr>
+      <td>{index}</td> 
+      <td>{group.id}</td>
+      <td>{group.med_size}</td>
+      <td>{group.true_size}</td>
+      <td>{group.fake_size}</td>
+      <td>{group.verified}</td>
+    </tr>
+  )
+}
 
 const Dashboard = () => {
   const firstChartData = [
@@ -18,20 +32,378 @@ const Dashboard = () => {
     { title: "False", value: 1534, color: "#f74242" },
     { title: "Unverified", value: 15566, color: "#414755" },
   ];
+
+  const groupData = [
+    {
+      id: "123123",
+      med_size: 45,
+      true_size: 23,
+      fake_size: 22,
+      verified: "0 (0.00%)" 
+    },
+    {
+      id: "123123",
+      med_size: 45,
+      true_size: 23,
+      fake_size: 22,
+      verified: "0 (0.00%)" 
+    },
+    {
+      id: "123123",
+      med_size: 45,
+      true_size: 23,
+      fake_size: 22,
+      verified: "0 (0.00%)" 
+    },
+    {
+      id: "VietnamProjectsConstructionGROUP",
+      med_size: 45,
+      true_size: 23,
+      fake_size: 22,
+      verified: "0 (0.00%)" 
+    },
+    {
+      id: "123123",
+      med_size: 45,
+      true_size: 23,
+      fake_size: 22,
+      verified: "0 (0.00%)" 
+    },
+    {
+      id: "123123",
+      med_size: 45,
+      true_size: 23,
+      fake_size: 22,
+      verified: "0 (0.00%)" 
+    },
+    {
+      id: "123123",
+      med_size: 45,
+      true_size: 23,
+      fake_size: 22,
+      verified: "0 (0.00%)" 
+    },
+    {
+      id: "12312312333333333333123123123131233",
+      med_size: 45,
+      true_size: 23,
+      fake_size: 22,
+      verified: "0 (0.00%)" 
+    },
+    {
+      id: "123123",
+      med_size: 45,
+      true_size: 23,
+      fake_size: 22,
+      verified: "0 (0.00%)" 
+    },
+    {
+      id: "123123",
+      med_size: 45,
+      true_size: 23,
+      fake_size: 22,
+      verified: "0 (0.00%)" 
+    },
+    {
+      id: "123123",
+      med_size: 45,
+      true_size: 23,
+      fake_size: 22,
+      verified: "0 (0.00%)" 
+    },
+    {
+      id: "123123",
+      med_size: 45,
+      true_size: 23,
+      fake_size: 22,
+      verified: "0 (0.00%)" 
+    },
+    {
+      id: "123123",
+      med_size: 45,
+      true_size: 23,
+      fake_size: 22,
+      verified: "0 (0.00%)" 
+    },
+    {
+      id: "123123",
+      med_size: 45,
+      true_size: 23,
+      fake_size: 22,
+      verified: "0 (0.00%)" 
+    },
+    {
+      id: "123123",
+      med_size: 45,
+      true_size: 23,
+      fake_size: 22,
+      verified: "0 (0.00%)" 
+    },
+    {
+      id: "VietnamProjectsConstructionGROUP",
+      med_size: 45,
+      true_size: 23,
+      fake_size: 22,
+      verified: "0 (0.00%)" 
+    },
+    {
+      id: "123123",
+      med_size: 45,
+      true_size: 23,
+      fake_size: 22,
+      verified: "0 (0.00%)" 
+    },
+    {
+      id: "123123",
+      med_size: 45,
+      true_size: 23,
+      fake_size: 22,
+      verified: "0 (0.00%)" 
+    },
+    {
+      id: "123123",
+      med_size: 45,
+      true_size: 23,
+      fake_size: 22,
+      verified: "0 (0.00%)" 
+    },
+    {
+      id: "12312312333333333333123123123131233",
+      med_size: 45,
+      true_size: 23,
+      fake_size: 22,
+      verified: "0 (0.00%)" 
+    },
+    {
+      id: "123123",
+      med_size: 45,
+      true_size: 23,
+      fake_size: 22,
+      verified: "0 (0.00%)" 
+    },
+    {
+      id: "123123",
+      med_size: 45,
+      true_size: 23,
+      fake_size: 22,
+      verified: "0 (0.00%)" 
+    },
+    {
+      id: "123123",
+      med_size: 45,
+      true_size: 23,
+      fake_size: 22,
+      verified: "0 (0.00%)" 
+    },
+    {
+      id: "123123",
+      med_size: 45,
+      true_size: 23,
+      fake_size: 22,
+      verified: "0 (0.00%)" 
+    },
+    {
+      id: "123123",
+      med_size: 45,
+      true_size: 23,
+      fake_size: 22,
+      verified: "0 (0.00%)" 
+    },
+    {
+      id: "123123",
+      med_size: 45,
+      true_size: 23,
+      fake_size: 22,
+      verified: "0 (0.00%)" 
+    },
+    {
+      id: "123123",
+      med_size: 45,
+      true_size: 23,
+      fake_size: 22,
+      verified: "0 (0.00%)" 
+    },
+    {
+      id: "VietnamProjectsConstructionGROUP",
+      med_size: 45,
+      true_size: 23,
+      fake_size: 22,
+      verified: "0 (0.00%)" 
+    },
+    {
+      id: "123123",
+      med_size: 45,
+      true_size: 23,
+      fake_size: 22,
+      verified: "0 (0.00%)" 
+    },
+    {
+      id: "123123",
+      med_size: 45,
+      true_size: 23,
+      fake_size: 22,
+      verified: "0 (0.00%)" 
+    },
+    {
+      id: "123123",
+      med_size: 45,
+      true_size: 23,
+      fake_size: 22,
+      verified: "0 (0.00%)" 
+    },
+    {
+      id: "12312312333333333333123123123131233",
+      med_size: 45,
+      true_size: 23,
+      fake_size: 22,
+      verified: "0 (0.00%)" 
+    },
+    {
+      id: "123123",
+      med_size: 45,
+      true_size: 23,
+      fake_size: 22,
+      verified: "0 (0.00%)" 
+    },
+    {
+      id: "123123",
+      med_size: 45,
+      true_size: 23,
+      fake_size: 22,
+      verified: "0 (0.00%)" 
+    },
+    {
+      id: "123123",
+      med_size: 45,
+      true_size: 23,
+      fake_size: 22,
+      verified: "0 (0.00%)" 
+    },
+    {
+      id: "123123",
+      med_size: 45,
+      true_size: 23,
+      fake_size: 22,
+      verified: "0 (0.00%)" 
+    },
+    {
+      id: "123123",
+      med_size: 45,
+      true_size: 23,
+      fake_size: 22,
+      verified: "0 (0.00%)" 
+    },
+    {
+      id: "123123",
+      med_size: 45,
+      true_size: 23,
+      fake_size: 22,
+      verified: "0 (0.00%)" 
+    },
+    {
+      id: "123123",
+      med_size: 45,
+      true_size: 23,
+      fake_size: 22,
+      verified: "0 (0.00%)" 
+    },
+    {
+      id: "VietnamProjectsConstructionGROUP",
+      med_size: 45,
+      true_size: 23,
+      fake_size: 22,
+      verified: "0 (0.00%)" 
+    },
+    {
+      id: "123123",
+      med_size: 45,
+      true_size: 23,
+      fake_size: 22,
+      verified: "0 (0.00%)" 
+    },
+    {
+      id: "123123",
+      med_size: 45,
+      true_size: 23,
+      fake_size: 22,
+      verified: "0 (0.00%)" 
+    },
+    {
+      id: "123123",
+      med_size: 45,
+      true_size: 23,
+      fake_size: 22,
+      verified: "0 (0.00%)" 
+    },
+    {
+      id: "12312312333333333333123123123131233",
+      med_size: 45,
+      true_size: 23,
+      fake_size: 22,
+      verified: "0 (0.00%)" 
+    },
+    {
+      id: "123123",
+      med_size: 45,
+      true_size: 23,
+      fake_size: 22,
+      verified: "0 (0.00%)" 
+    },
+    {
+      id: "123123",
+      med_size: 45,
+      true_size: 23,
+      fake_size: 22,
+      verified: "0 (0.00%)" 
+    },
+    {
+      id: "123123",
+      med_size: 45,
+      true_size: 23,
+      fake_size: 22,
+      verified: "0 (0.00%)" 
+    },
+    {
+      id: "123123",
+      med_size: 45,
+      true_size: 23,
+      fake_size: 22,
+      verified: "0 (0.00%)" 
+    },
+
+
+
+
+  ]
+
   return (
-   <div>
-      <div class="row">
-        <div class="column">
+   <div className={DashboardStyle.container}>
+      <div className={DashboardStyle.row}>
+        <div>
           <DashBoardChart data={firstChartData} />
         </div>
-        <div class="column">
+        <div>
           <DashBoardChart data={secondChartData} />
         </div>
-        <div class="column">
+        <div>
           <DashBoardChart data={thirdChartData} />
         </div>
       </div>
-    </div>
+      <h2>Group summary data:</h2>
+      <table className={DashboardStyle.table}>
+        <tr>
+          <th>No</th>
+          <th>Group ID</th>
+          <th>Medical</th>
+          <th>True</th>
+          <th>False</th>
+          <th>Verified</th>
+        </tr>
+        {groupData.map((group, index) => (
+          <DashBoardItem index={index+1} group={group} />  
+        ))}
+      </table>
+  </div>
   )
 }
 

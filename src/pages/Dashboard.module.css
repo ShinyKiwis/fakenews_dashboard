@@ -1,0 +1,42 @@
+.row {
+  display: flex;
+  justify-content: center;
+  gap: 6em;
+}
+
+.container {
+  width: 100%;
+  overflow-x: hidden;
+  padding: 2em;
+}
+
+.table {
+  width: 100%;
+  margin: 2em;
+  table-layout: fixed;
+}
+
+.table th:nth-child(1) {
+  width: 1em;
+}
+
+.table th:nth-child(2) {
+  width: 18em;
+}
+
+.table th:nth-child(n+3):nth-child(-n+6) {
+  width: 3em;
+}
+
+.table th {
+  text-align: start;
+  padding-bottom: 2em;
+}
+
+.table tr {
+  border-bottom: 2px solid #ccc;
+}
+
+.table td {
+  padding-bottom: 1em;
+}
