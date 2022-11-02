@@ -23,9 +23,8 @@
 
 .table th {
   text-align: start;
-  padding: 0 10px;
-  background-color: #2a344e;
-  color: white;
+  padding: 0 1em;
+  color: #2a344e;
 }
 
 .table th:nth-child(1) {
@@ -48,18 +47,18 @@
   border-radius: 0 10px 10px 0;
 }
 
-.table tr {
+.table tr:not(:first-child) {
   border-radius: 10px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   height: 3em;
   transition: 0.2s;
 }
 
-.table tr:hover {
+.table tr:not(:first-child):hover {
   box-shadow: 0 0 0 3px #2a344e;
 }
 
-.table tr:active {
+.table tr:not(:first-child):active {
   background-color: #2a344e;
   color: white;
 }

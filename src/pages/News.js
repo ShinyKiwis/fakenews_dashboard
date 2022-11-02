@@ -4,17 +4,23 @@ import { HiPencil, HiFlag } from "react-icons/hi";
 
 const PostItem = ({ postContent, groupID, type, validity }) => {
   return (
-    <tr>
+    <tr className={NewsStyle.post_item}>
       <td>{postContent}</td>
       <td>{groupID}</td>
       <td style={{ paddingRight: "1em" }}>
-        <Pill type={type} color="blue" />
+        <Pill type={type} />
       </td>
       <td>
         <div className={NewsStyle.post_edit}>
-          <Pill type={validity} color="red" />
-          <HiPencil className={NewsStyle.post_icon} />
-          <HiFlag className={NewsStyle.post_icon} />
+          <Pill type={validity} />
+          <HiPencil
+            className={NewsStyle.post_icon}
+            style={{ color: "#2A344E" }}
+          />
+          <HiFlag
+            className={NewsStyle.post_icon}
+            style={{ color: "#2A344E" }}
+          />
         </div>
       </td>
     </tr>
@@ -25,73 +31,241 @@ const News = () => {
   const posts = [
     {
       postContent:
-        "Aliqua aute culpa incididunt officia consequat. Mollit veniam sit incididunt reprehenderit. Non sit ipsum ut ad Lorem dolore culpa do aliqua laborum id irure consectetur aliquip. Qui magna dolore mollit sunt pariatur dolore occaecat. Velit mollit ad sunt elit est consequat.",
+        "Aliqua aute culpa incididunt officia consequat. Mollit veniam sit incididunt reprehenderit. Non sit ipsum ut ad Lorem dolore culpa do aliqua laborum id...",
       groupID: "123123123123",
       type: "Medical",
       validity: "False",
     },
     {
       postContent:
-        "Aliqua aute culpa incididunt officia consequat. Mollit veniam sit incididunt reprehenderit. Non sit ipsum ut ad Lorem dolore culpa do aliqua laborum id irure consectetur aliquip. Qui magna dolore mollit sunt pariatur dolore occaecat. Velit mollit ad sunt elit est consequat.",
+        "Aliqua aute culpa incididunt officia consequat. Mollit veniam sit incididunt reprehenderit. Non sit ipsum ut ad Lorem dolore culpa do aliqua laborum id...",
+      groupID: "123123123123",
+      type: "Nonmed",
+      validity: "Unverified",
+    },
+    {
+      postContent:
+        "Aliqua aute culpa incididunt officia consequat. Mollit veniam sit incididunt reprehenderit. Non sit ipsum ut ad Lorem dolore culpa do aliqua laborum id...",
+      groupID: "123123123123",
+      type: "Medical",
+      validity: "True",
+    },
+    {
+      postContent:
+        "Aliqua aute culpa incididunt officia consequat. Mollit veniam sit incididunt reprehenderit. Non sit ipsum ut ad Lorem dolore culpa do aliqua laborum id...",
+      groupID: "123123123123",
+      type: "Medical",
+      validity: "Not News",
+    },
+    {
+      postContent:
+        "Aliqua aute culpa incididunt officia consequat. Mollit veniam sit incididunt reprehenderit. Non sit ipsum ut ad Lorem dolore culpa do aliqua laborum id...",
+      groupID: "123123123123",
+      type: "Nonmed",
+      validity: "Unverified",
+    },
+    {
+      postContent:
+        "Aliqua aute culpa incididunt officia consequat. Mollit veniam sit incididunt reprehenderit. Non sit ipsum ut ad Lorem dolore culpa do aliqua laborum id...",
+      groupID: "123123123123",
+      type: "Medical",
+      validity: "Not News",
+    },
+    {
+      postContent:
+        "Aliqua aute culpa incididunt officia consequat. Mollit veniam sit incididunt reprehenderit. Non sit ipsum ut ad Lorem dolore culpa do aliqua laborum id...",
+      groupID: "123123123123",
+      type: "Nonmed",
+      validity: "False",
+    },
+    {
+      postContent:
+        "Aliqua aute culpa incididunt officia consequat. Mollit veniam sit incididunt reprehenderit. Non sit ipsum ut ad Lorem dolore culpa do aliqua laborum id...",
+      groupID: "123123123123",
+      type: "Medical",
+      validity: "True",
+    },
+    {
+      postContent:
+        "Aliqua aute culpa incididunt officia consequat. Mollit veniam sit incididunt reprehenderit. Non sit ipsum ut ad Lorem dolore culpa do aliqua laborum id...",
+      groupID: "123123123123",
+      type: "Nonmed",
+      validity: "False",
+    },
+    {
+      postContent:
+        "Aliqua aute culpa incididunt officia consequat. Mollit veniam sit incididunt reprehenderit. Non sit ipsum ut ad Lorem dolore culpa do aliqua laborum id...",
+      groupID: "123123123123",
+      type: "Nonmed",
+      validity: "True",
+    },
+    {
+      postContent:
+        "Aliqua aute culpa incididunt officia consequat. Mollit veniam sit incididunt reprehenderit. Non sit ipsum ut ad Lorem dolore culpa do aliqua laborum id...",
+      groupID: "123123123123",
+      type: "Medical",
+      validity: "Not News",
+    },
+    {
+      postContent:
+        "Aliqua aute culpa incididunt officia consequat. Mollit veniam sit incididunt reprehenderit. Non sit ipsum ut ad Lorem dolore culpa do aliqua laborum id...",
+      groupID: "123123123123",
+      type: "Nonmed",
+      validity: "Unverified",
+    },
+    {
+      postContent:
+        "Aliqua aute culpa incididunt officia consequat. Mollit veniam sit incididunt reprehenderit. Non sit ipsum ut ad Lorem dolore culpa do aliqua laborum id...",
+      groupID: "123123123123",
+      type: "Medical",
+      validity: "Not News",
+    },
+    {
+      postContent:
+        "Aliqua aute culpa incididunt officia consequat. Mollit veniam sit incididunt reprehenderit. Non sit ipsum ut ad Lorem dolore culpa do aliqua laborum id...",
       groupID: "123123123123",
       type: "Medical",
       validity: "False",
     },
     {
       postContent:
-        "Aliqua aute culpa incididunt officia consequat. Mollit veniam sit incididunt reprehenderit. Non sit ipsum ut ad Lorem dolore culpa do aliqua laborum id irure consectetur aliquip. Qui magna dolore mollit sunt pariatur dolore occaecat. Velit mollit ad sunt elit est consequat.",
+        "Aliqua aute culpa incididunt officia consequat. Mollit veniam sit incididunt reprehenderit. Non sit ipsum ut ad Lorem dolore culpa do aliqua laborum id...",
+      groupID: "123123123123",
+      type: "Nonmed",
+      validity: "Unverified",
+    },
+    {
+      postContent:
+        "Aliqua aute culpa incididunt officia consequat. Mollit veniam sit incididunt reprehenderit. Non sit ipsum ut ad Lorem dolore culpa do aliqua laborum id...",
+      groupID: "123123123123",
+      type: "Medical",
+      validity: "True",
+    },
+    {
+      postContent:
+        "Aliqua aute culpa incididunt officia consequat. Mollit veniam sit incididunt reprehenderit. Non sit ipsum ut ad Lorem dolore culpa do aliqua laborum id...",
+      groupID: "123123123123",
+      type: "Medical",
+      validity: "Not News",
+    },
+    {
+      postContent:
+        "Aliqua aute culpa incididunt officia consequat. Mollit veniam sit incididunt reprehenderit. Non sit ipsum ut ad Lorem dolore culpa do aliqua laborum id...",
+      groupID: "123123123123",
+      type: "Medical",
+      validity: "True",
+    },
+    {
+      postContent:
+        "Aliqua aute culpa incididunt officia consequat. Mollit veniam sit incididunt reprehenderit. Non sit ipsum ut ad Lorem dolore culpa do aliqua laborum id...",
+      groupID: "123123123123",
+      type: "Medical",
+      validity: "Not News",
+    },
+    {
+      postContent:
+        "Aliqua aute culpa incididunt officia consequat. Mollit veniam sit incididunt reprehenderit. Non sit ipsum ut ad Lorem dolore culpa do aliqua laborum id...",
+      groupID: "123123123123",
+      type: "Nonmed",
+      validity: "Unverified",
+    },
+    {
+      postContent:
+        "Aliqua aute culpa incididunt officia consequat. Mollit veniam sit incididunt reprehenderit. Non sit ipsum ut ad Lorem dolore culpa do aliqua laborum id...",
+      groupID: "123123123123",
+      type: "Medical",
+      validity: "Not News",
+    },
+    {
+      postContent:
+        "Aliqua aute culpa incididunt officia consequat. Mollit veniam sit incididunt reprehenderit. Non sit ipsum ut ad Lorem dolore culpa do aliqua laborum id...",
+      groupID: "123123123123",
+      type: "Nonmed",
+      validity: "False",
+    },
+    {
+      postContent:
+        "Aliqua aute culpa incididunt officia consequat. Mollit veniam sit incididunt reprehenderit. Non sit ipsum ut ad Lorem dolore culpa do aliqua laborum id...",
+      groupID: "123123123123",
+      type: "Nonmed",
+      validity: "Unverified",
+    },
+    {
+      postContent:
+        "Aliqua aute culpa incididunt officia consequat. Mollit veniam sit incididunt reprehenderit. Non sit ipsum ut ad Lorem dolore culpa do aliqua laborum id...",
+      groupID: "123123123123",
+      type: "Medical",
+      validity: "Not News",
+    },
+    {
+      postContent:
+        "Aliqua aute culpa incididunt officia consequat. Mollit veniam sit incididunt reprehenderit. Non sit ipsum ut ad Lorem dolore culpa do aliqua laborum id...",
+      groupID: "123123123123",
+      type: "Nonmed",
+      validity: "False",
+    },
+    {
+      postContent:
+        "Aliqua aute culpa incididunt officia consequat. Mollit veniam sit incididunt reprehenderit. Non sit ipsum ut ad Lorem dolore culpa do aliqua laborum id...",
+      groupID: "123123123123",
+      type: "Medical",
+      validity: "True",
+    },
+    {
+      postContent:
+        "Aliqua aute culpa incididunt officia consequat. Mollit veniam sit incididunt reprehenderit. Non sit ipsum ut ad Lorem dolore culpa do aliqua laborum id...",
+      groupID: "123123123123",
+      type: "Nonmed",
+      validity: "False",
+    },
+    {
+      postContent:
+        "Aliqua aute culpa incididunt officia consequat. Mollit veniam sit incididunt reprehenderit. Non sit ipsum ut ad Lorem dolore culpa do aliqua laborum id...",
+      groupID: "123123123123",
+      type: "Nonmed",
+      validity: "True",
+    },
+    {
+      postContent:
+        "Aliqua aute culpa incididunt officia consequat. Mollit veniam sit incididunt reprehenderit. Non sit ipsum ut ad Lorem dolore culpa do aliqua laborum id...",
+      groupID: "123123123123",
+      type: "Medical",
+      validity: "Not News",
+    },
+    {
+      postContent:
+        "Aliqua aute culpa incididunt officia consequat. Mollit veniam sit incididunt reprehenderit. Non sit ipsum ut ad Lorem dolore culpa do aliqua laborum id...",
+      groupID: "123123123123",
+      type: "Nonmed",
+      validity: "Unverified",
+    },
+    {
+      postContent:
+        "Aliqua aute culpa incididunt officia consequat. Mollit veniam sit incididunt reprehenderit. Non sit ipsum ut ad Lorem dolore culpa do aliqua laborum id...",
+      groupID: "123123123123",
+      type: "Medical",
+      validity: "Not News",
+    },
+    {
+      postContent:
+        "Aliqua aute culpa incididunt officia consequat. Mollit veniam sit incididunt reprehenderit. Non sit ipsum ut ad Lorem dolore culpa do aliqua laborum id...",
       groupID: "123123123123",
       type: "Medical",
       validity: "False",
     },
     {
       postContent:
-        "Aliqua aute culpa incididunt officia consequat. Mollit veniam sit incididunt reprehenderit. Non sit ipsum ut ad Lorem dolore culpa do aliqua laborum id irure consectetur aliquip. Qui magna dolore mollit sunt pariatur dolore occaecat. Velit mollit ad sunt elit est consequat.",
+        "Aliqua aute culpa incididunt officia consequat. Mollit veniam sit incididunt reprehenderit. Non sit ipsum ut ad Lorem dolore culpa do aliqua laborum id...",
       groupID: "123123123123",
-      type: "Medical",
-      validity: "False",
+      type: "Nonmed",
+      validity: "Unverified",
     },
     {
       postContent:
-        "Aliqua aute culpa incididunt officia consequat. Mollit veniam sit incididunt reprehenderit. Non sit ipsum ut ad Lorem dolore culpa do aliqua laborum id irure consectetur aliquip. Qui magna dolore mollit sunt pariatur dolore occaecat. Velit mollit ad sunt elit est consequat.",
+        "Aliqua aute culpa incididunt officia consequat. Mollit veniam sit incididunt reprehenderit. Non sit ipsum ut ad Lorem dolore culpa do aliqua laborum id...",
       groupID: "123123123123",
       type: "Medical",
-      validity: "False",
-    },
-    {
-      postContent:
-        "Aliqua aute culpa incididunt officia consequat. Mollit veniam sit incididunt reprehenderit. Non sit ipsum ut ad Lorem dolore culpa do aliqua laborum id irure consectetur aliquip. Qui magna dolore mollit sunt pariatur dolore occaecat. Velit mollit ad sunt elit est consequat.",
-      groupID: "123123123123",
-      type: "Medical",
-      validity: "False",
-    },
-    {
-      postContent:
-        "Aliqua aute culpa incididunt officia consequat. Mollit veniam sit incididunt reprehenderit. Non sit ipsum ut ad Lorem dolore culpa do aliqua laborum id irure consectetur aliquip. Qui magna dolore mollit sunt pariatur dolore occaecat. Velit mollit ad sunt elit est consequat.",
-      groupID: "123123123123",
-      type: "Medical",
-      validity: "False",
-    },
-    {
-      postContent:
-        "Aliqua aute culpa incididunt officia consequat. Mollit veniam sit incididunt reprehenderit. Non sit ipsum ut ad Lorem dolore culpa do aliqua laborum id irure consectetur aliquip. Qui magna dolore mollit sunt pariatur dolore occaecat. Velit mollit ad sunt elit est consequat.",
-      groupID: "123123123123",
-      type: "Medical",
-      validity: "False",
-    },
-    {
-      postContent:
-        "Aliqua aute culpa incididunt officia consequat. Mollit veniam sit incididunt reprehenderit. Non sit ipsum ut ad Lorem dolore culpa do aliqua laborum id irure consectetur aliquip. Qui magna dolore mollit sunt pariatur dolore occaecat. Velit mollit ad sunt elit est consequat.",
-      groupID: "123123123123",
-      type: "Medical",
-      validity: "False",
-    },
-    {
-      postContent:
-        "Aliqua aute culpa incididunt officia consequat. Mollit veniam sit incididunt reprehenderit. Non sit ipsum ut ad Lorem dolore culpa do aliqua laborum id irure consectetur aliquip. Qui magna dolore mollit sunt pariatur dolore occaecat. Velit mollit ad sunt elit est consequat.",
-      groupID: "123123123123",
-      type: "Medical",
-      validity: "False",
+      validity: "True",
     },
   ];
   return (
