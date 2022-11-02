@@ -389,7 +389,7 @@ const Dashboard = () => {
           <DashBoardChart data={thirdChartData} />
         </div>
       </div>
-      <h2>Group summary data:</h2>
+      <h2 className={DashboardStyle.title}>Group summary data:</h2>
       <table className={DashboardStyle.table}>
         <tr>
           <th>No</th>
