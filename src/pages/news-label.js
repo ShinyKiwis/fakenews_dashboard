@@ -7,6 +7,8 @@ import {
   FaRegFlag,
   FaInfoCircle,
 } from "react-icons/fa";
+import { useRipple } from 'react-use-ripple';
+import { useRef } from 'react';
 
 function News_label() {
   const actions = [
@@ -20,6 +22,15 @@ function News_label() {
     "comment",
     "share",
   ];
+
+  const trueButtonRef = useRef();
+  const falseButtonRef = useRef();
+  const skipButtonRef = useRef();
+
+  useRipple(trueButtonRef, {animationLength: 300, rippleColor: 'white'})
+  useRipple(falseButtonRef, {animationLength: 300, rippleColor: 'white'})
+  useRipple(skipButtonRef, {animationLength: 300, rippleColor: 'white'})
+
   return (
     <div>
       <div className="row">
@@ -82,17 +93,17 @@ function News_label() {
         </div>
         <div className="label">
           <p className="question">Is this medical news correct?</p>
-          <button className="true">
+          <button className="true" ref={trueButtonRef}>
             <span>True</span>
             <span>This news is medically correct.</span>
             <img src={"icons/true.svg"} />
           </button>
-          <button className="false">
+          <button className="false" ref={falseButtonRef}>
             <span>False</span>
             <span>This news is medically incorrect.</span>
             <img src={"icons/false.svg"} />
           </button>
-          <button className="skip">
+          <button className="skip" ref={skipButtonRef}>
             <span>Skip</span>
             <span>Additional information is required.</span>
             <img src={"icons/unverified.svg"} />

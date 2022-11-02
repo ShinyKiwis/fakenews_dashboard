@@ -7,6 +7,8 @@ import {
   FaRegFlag,
   FaInfoCircle,
 } from "react-icons/fa";
+import { useRipple } from 'react-use-ripple';
+import { useRef } from 'react';
 
 function Medicalnews_label() {
   const actions = [
@@ -20,6 +22,15 @@ function Medicalnews_label() {
     "comment",
     "share",
   ];
+
+  const newsButtonRef = useRef();
+  const notNewsButtonRef = useRef();
+  const skipButtonRef = useRef();
+
+  useRipple(newsButtonRef, {animationLength: 300, rippleColor: 'white'})
+  useRipple(notNewsButtonRef, {animationLength: 300, rippleColor: 'white'})
+  useRipple(skipButtonRef, {animationLength: 300, rippleColor: 'white'})
+
   return (
     <div>
       <div className="row">
@@ -82,17 +93,17 @@ function Medicalnews_label() {
         </div>
         <div className="label">
           <p className="question">Is this a news post?</p>
-          <button className="news">
+          <button className="news" ref={newsButtonRef}>
             <span>News</span>
             <span>This is a news post.</span>
             <img src={"icons/news.svg"} />
           </button>
-          <button className="notnews">
+          <button className="notnews" ref={notNewsButtonRef}>
             <span>Not News</span>
             <span>This is not a news post.</span>
             <img src={"icons/notnews.svg"} />
           </button>
-          <button className="skip">
+          <button className="skip" ref={skipButtonRef}>
             <span>Skip</span>
             <span>Additional information is required.</span>
             <img src={"icons/unverified.svg"} />
