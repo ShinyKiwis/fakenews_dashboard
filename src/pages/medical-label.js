@@ -10,6 +10,39 @@ import {
 import { useRipple } from 'react-use-ripple';
 import { useRef } from 'react';
 
+const RelationdataItem = ({ index, group }) => {
+  return (
+    <tr>
+      <td>{index}</td>
+      <td>{group.id}</td>
+      <td>{group.med_size}</td>
+      <td>{group.true_size}</td>
+      <td>{group.fake_size}</td>
+      <td>{group.verified}</td>
+    </tr>
+  )
+}
+
+const groupData = [
+  {
+    id: "Lorem ipsum dolor sit amet, consectetur adipiscing",
+    med_size: "Disagree",
+    fake_size: "link",
+
+  },
+  {
+    id: "Lorem ipsum",
+    med_size: "Agree",
+    fake_size: "link",
+  },
+  {
+    id: "Lorem ipsum",
+    med_size: "Disagree",
+    fake_size: "link",
+
+  }
+]
+
 function Medical_label() {
   const actions = [
     "like",
@@ -27,9 +60,9 @@ function Medical_label() {
   const nonmedButtonRef = useRef();
   const skipButtonRef = useRef();
 
-  useRipple(medicalButtonRef, {animationLength: 300, rippleColor: 'white'})
-  useRipple(nonmedButtonRef, {animationLength: 300, rippleColor: 'white'})
-  useRipple(skipButtonRef, {animationLength: 300, rippleColor: 'white'})
+  useRipple(medicalButtonRef, { animationLength: 300, rippleColor: 'white' })
+  useRipple(nonmedButtonRef, { animationLength: 300, rippleColor: 'white' })
+  useRipple(skipButtonRef, { animationLength: 300, rippleColor: 'white' })
 
   return (
     <div>
@@ -127,6 +160,22 @@ function Medical_label() {
             <div className="icon">
               <FaInfoCircle style={{ fontSize: "20px", color: "#2A344E" }} />
             </div>
+          </div>
+          <div className="related-post">
+            <h2 style={{ color: 'white' }}>Related Post</h2>
+            {/* <tr>
+              <th>No</th>
+              <th>Content</th>
+              <th>Status</th>
+              <th>Link</th>
+            </tr> */}
+
+            <table className="relation-table">
+              {groupData.map((group, index) => (
+                <RelationdataItem index={index + 1} group={group} />
+              ))}
+            </table>
+
           </div>
         </div>
       </div>
