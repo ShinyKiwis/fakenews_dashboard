@@ -6,6 +6,7 @@ import {
   FaHistory,
   FaRegFlag,
   FaInfoCircle,
+  FaExternalLinkAlt
 } from "react-icons/fa";
 import { useRipple } from 'react-use-ripple';
 import { useRef } from 'react';
@@ -15,10 +16,8 @@ const RelationdataItem = ({ index, group }) => {
     <tr>
       <td>{index}</td>
       <td>{group.id}</td>
-      <td>{group.med_size}</td>
-      <td>{group.true_size}</td>
-      <td>{group.fake_size}</td>
-      <td>{group.verified}</td>
+      <td>{group.status}</td>
+      <td>{group.link}</td>
     </tr>
   )
 }
@@ -26,19 +25,19 @@ const RelationdataItem = ({ index, group }) => {
 const groupData = [
   {
     id: "Lorem ipsum dolor sit amet, consectetur adipiscing",
-    med_size: "Disagree",
-    fake_size: "link",
+    status: "Disagree",
+    link: FaExternalLinkAlt,
 
   },
   {
     id: "Lorem ipsum",
-    med_size: "Agree",
-    fake_size: "link",
+    status: "Agree",
+    link: FaExternalLinkAlt,
   },
   {
     id: "Lorem ipsum",
-    med_size: "Disagree",
-    fake_size: "link",
+    status: "Disagree",
+    link: FaExternalLinkAlt,
 
   }
 ]
