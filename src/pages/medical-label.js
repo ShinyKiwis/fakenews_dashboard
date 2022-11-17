@@ -26,18 +26,18 @@ const groupData = [
   {
     id: "Lorem ipsum dolor sit amet, consectetur adipiscing",
     status: "Disagree",
-    link: FaExternalLinkAlt,
+    link: <FaExternalLinkAlt/>,
 
   },
   {
     id: "Lorem ipsum",
     status: "Agree",
-    link: FaExternalLinkAlt,
+    link: <FaExternalLinkAlt/>,
   },
   {
     id: "Lorem ipsum",
     status: "Disagree",
-    link: FaExternalLinkAlt,
+    link: <FaExternalLinkAlt/>,
 
   }
 ]
