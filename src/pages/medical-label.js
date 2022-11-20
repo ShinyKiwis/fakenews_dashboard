@@ -1,13 +1,5 @@
 import "./medical-label.css";
-import { dict, comment } from "../components/Labeling/Data.js";
-import {
-  FaRobot,
-  FaPen,
-  FaHistory,
-  FaRegFlag,
-  FaInfoCircle,
-  FaExternalLinkAlt
-} from "react-icons/fa";
+import { dict, comment, groupData } from "../components/Labeling/Data.js";
 import { useRipple } from 'react-use-ripple';
 import { useRef } from 'react';
 
@@ -22,25 +14,7 @@ const RelationdataItem = ({ index, group }) => {
   )
 }
 
-const groupData = [
-  {
-    id: "Lorem ipsum dolor sit amet, consectetur adipiscing",
-    status: "Disagree",
-    link: <FaExternalLinkAlt/>,
 
-  },
-  {
-    id: "Lorem ipsum",
-    status: "Agree",
-    link: <FaExternalLinkAlt/>,
-  },
-  {
-    id: "Lorem ipsum",
-    status: "Disagree",
-    link: <FaExternalLinkAlt/>,
-
-  }
-]
 
 function Medical_label() {
   const actions = [
@@ -124,42 +98,41 @@ function Medical_label() {
           </div>
         </div>
         <div className="label">
-          <p className="question">Is this news medical?</p>
-          <button className="medical" ref={medicalButtonRef}>
-            <span>Medical</span>
-            <span>This news is medical-related.</span>
-            <img src={"icons/medical.svg"} />
-          </button>
-          <button className="nonmed" ref={nonmedButtonRef}>
-            <span>Nonmed</span>
-            <span>This news is not medical-related.</span>
-            <img src={"icons/nonmed.svg"} />
-          </button>
-          <button className="skip" ref={skipButtonRef}>
-            <span>Skip</span>
-            <span>Additional information is required.</span>
+          <div className="label-holder">
+            <button className="medical" ref={medicalButtonRef}>
+              <span>Medical</span>
+              <img src={"icons/medical.svg"} />
+            </button>
+            <button className="nonmed" ref={nonmedButtonRef}>
+              <span>Nonmed</span>
+              <img src={"icons/nonmed.svg"} />
+            </button>
+          </div>
+          <hr></hr>
+          <div className="label-holder">
+            <button className="true" ref={medicalButtonRef}>
+              <span>True</span>
+              <img src={"icons/medical.svg"} />
+            </button>
+            <button className="false" ref={nonmedButtonRef}>
+              <span>False</span>
+              <img src={"icons/nonmed.svg"} />
+            </button>
+          </div>
+          <hr></hr>
+          <div className="label-holder">
+            <button className="verified" ref={medicalButtonRef}>
+              <span>Verified</span>
+              <img src={"icons/medical.svg"} />
+            </button>
+            <button className="unverified" ref={skipButtonRef}>
+            <span>Unverified</span>
             <img src={"icons/unverified.svg"} />
-          </button>
+            </button>
+          </div>
+          
+          
 
-          <div className="robot">
-            <img src={"icons/robot.svg"} />
-            <span>ML classication suggests that this is</span>
-            <span>News</span>
-          </div>
-          <div className="icon-area">
-            <div className="icon">
-              <FaPen style={{ fontSize: "20px", color: "#2A344E" }} />
-            </div>
-            <div className="icon">
-              <FaHistory style={{ fontSize: "20px", color: "#2A344E" }} />
-            </div>
-            <div className="icon">
-              <FaRegFlag style={{ fontSize: "20px", color: "#2A344E" }} />
-            </div>
-            <div className="icon">
-              <FaInfoCircle style={{ fontSize: "20px", color: "#2A344E" }} />
-            </div>
-          </div>
           <div className="related-post">
             <h2 style={{ color: 'white' }}>Related Post</h2>
             {/* <tr>

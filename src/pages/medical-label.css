@@ -16,7 +16,7 @@ hr {
 
 .post {
     background-color: white;
-    width: 70%;
+    width: 62%;
     height: auto;
     margin-left: 1.25em;
     margin-top: -0.25em;
@@ -93,10 +93,22 @@ hr {
     justify-content: center;
     text-align: center;
     background-color: #2A344E;
-    width: 25%;
+    width: 32%;
     height: 100%;
 }
-
+.label hr{
+    width:90%;
+    height:0px;
+    background-color:gray;
+    border-color: gray;
+    margin-top:5px;
+    margin-bottom:0px;
+}
+.label-holder{
+    display: flex;
+    justify-content: center;
+    height:9em;
+}
 .question {
     color: white;
     font-size: 20px;
@@ -109,12 +121,16 @@ hr {
 
 .label button {
     align-items: stretch;
+    display: flex;
+    justify-content: center;
     margin-left: 0px;
     border-radius: 10px;
     border-color: transparent;
-    height: 15%;
-    width: 90%;
-    margin: 5px 10px;
+    height: 90%;
+    width: 45%;
+    margin: 0em .6em;
+    margin-top:.8em;
+    padding-top:8%;
     position: relative;
     overflow: hidden;
     transition: all 0.1s;
@@ -131,11 +147,12 @@ hr {
     padding-left: 10px;
     text-align: left;
     font-weight: lighter;
+    font-size: 15px;
 }
 
 .label button span:first-of-type {
     padding-top: 5%;
-    font-size: 4em;
+    font-size: 2em;
     line-height: 1.2;
     font-weight: 545;
 }
@@ -158,10 +175,6 @@ hr {
     background-color: #3CD5EB;
 }
 
-.skip {
-    background-color: #AEAEAE;
-}
-
 /*True or false*/
 .true {
     background-color: #20DD59;
@@ -172,12 +185,12 @@ hr {
 }
 
 /*News or question*/
-.news {
+.verified {
     background-color: #9E3EE0;
 }
 
-.notnews {
-    background-color: #FFCF32;
+.unverified {
+    background-color: #AEAEAE;
 }
 
 /*AI classification*/
@@ -230,7 +243,10 @@ hr {
     background-color: white;
     border-radius: 30px;
 }
-
+.related-post{
+    overflow-y: scroll;
+    height:22em;
+}
 .relation-table {
     color: white;
 }
@@ -238,6 +254,17 @@ hr {
 .relation-table th {
     text-align: start;
     padding: 0 1em;
+    color: #2a344e;
+}
+.relation-table tr {
+    text-align: start;
+    padding: 0 1em;
+    background-color: #2a344e;
+}
+.relation-table tr:hover {
+    text-align: start;
+    padding: 0 1em;
+    background-color: #ACACAC;
     color: #2a344e;
 }
 
@@ -263,19 +290,11 @@ hr {
 
 .relation-table tr:not(:first-child) {
     border-radius: 10px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 5px rgba(238, 238, 238, 0.2);
     height: 3em;
     transition: 0.2s;
 }
 
-.relation-table tr:not(:first-child):hover {
-    box-shadow: 0 0 0 3px white;
-}
-
-.relation-table tr:not(:first-child):active {
-    background-color: #2a344e;
-    color: white;
-}
 
 .relation-table tr td {
     padding: 10px 10px;

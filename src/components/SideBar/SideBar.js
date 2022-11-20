@@ -3,8 +3,7 @@ import {
   MdHomeFilled,
   MdOutlineArticle,
   MdOutlineMedicalServices,
-  MdOutlineLiveHelp,
-  MdRule,
+  MdLabelOutline,
   MdOutlineFileDownload,
 } from "react-icons/md";
 import { useState } from "react";
@@ -50,22 +49,10 @@ const SideBar = () => {
         href="/news"
       />
       <SideBarItem
-        Item={MdOutlineMedicalServices}
-        page="Medical Labeling"
+        Item={MdLabelOutline}
+        page="Labeling"
         onHover={onHover}
         href="med-label"
-      />
-      <SideBarItem
-        Item={MdOutlineLiveHelp}
-        page="Medical News Check"
-        onHover={onHover}
-        href="med-news-label"
-      />
-      <SideBarItem
-        Item={MdRule}
-        page="News/Question Labeling"
-        onHover={onHover}
-        href="news-label"
       />
       <SideBarItem
         Item={MdOutlineFileDownload}
