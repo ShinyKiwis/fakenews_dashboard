@@ -11,7 +11,7 @@ import {useState} from "react"
 
 
 function App() {
-  const [auth, setAuth] = useState(false);
+  const [auth, setAuth] = useState(true);
 
   if(!auth){
     return <Login setAuth={setAuth}/>

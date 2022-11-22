@@ -2,6 +2,7 @@ import "./medical-label.css";
 import { dict, comment, groupData } from "../components/Labeling/Data.js";
 import { useRipple } from 'react-use-ripple';
 import { useRef } from 'react';
+import {BiChevronLeft, BiChevronRight} from "react-icons/bi"
 
 const RelationdataItem = ({ index, group }) => {
   return (
@@ -38,64 +39,66 @@ function Medical_label() {
   useRipple(skipButtonRef, { animationLength: 300, rippleColor: 'white' })
 
   return (
-    <div>
-      <div className="row">
-        <div className="post">
-          <div className="top">
-            <img
-              className="avatar"
-              src={dict[0].avatar}
-              width={40}
-              height={40}
-              alt=""
-            />
-            <p>{dict[0].name}</p>
-          </div>
-          <div className="content">
-            <p>{dict[0].message}</p>
-          </div>
-          <hr></hr>
-          <div className="bottom">
-            {actions.map((action) => (
+      <div className="label_container">
+        <div className="label_section">
+          <div className="post">
+            <div className="top">
               <img
-                src={`emotions/${action}.png`}
-                alt="emotion_icon"
+                className="avatar"
+                src={dict[0].avatar}
                 width={40}
                 height={40}
+                alt=""
               />
-            ))}
-          </div>
-          <hr></hr>
-          <div className="commentarea">
-            <img
-              className="cmtavatar"
-              src={comment[0].avatar}
-              width={40}
-              height={40}
-              alt=""
-            />
-            <div className="comment">
-              <p>
-                <b>{comment[0].name}</b>
-              </p>
-              <p>{comment[0].message}</p>
+              <p>{dict[0].name}</p>
+            </div>
+            <div className="content">
+              <p>{dict[0].message}</p>
+            </div>
+            <hr></hr>
+            <div className="bottom">
+              {actions.map((action) => (
+                <img
+                  src={`emotions/${action}.png`}
+                  alt="emotion_icon"
+                  width={40}
+                  height={40}
+                />
+              ))}
+            </div>
+            <hr></hr>
+            <div className="commentarea">
+              <img
+                className="cmtavatar"
+                src={comment[0].avatar}
+                width={40}
+                height={40}
+                alt=""
+              />
+              <div className="comment">
+                <p>
+                  <b>{comment[0].name}</b>
+                </p>
+                <p>{comment[0].message}</p>
+              </div>
+            </div>
+            <div className="commentarea">
+              <img
+                className="cmtavatar"
+                src={comment[1].avatar}
+                width={40}
+                height={40}
+                alt=""
+              />
+              <div className="comment">
+                <p>
+                  <b>{comment[1].name}</b>
+                </p>
+                <p>{comment[1].message}</p>
+              </div>
             </div>
           </div>
-          <div className="commentarea">
-            <img
-              className="cmtavatar"
-              src={comment[1].avatar}
-              width={40}
-              height={40}
-              alt=""
-            />
-            <div className="comment">
-              <p>
-                <b>{comment[1].name}</b>
-              </p>
-              <p>{comment[1].message}</p>
-            </div>
-          </div>
+
         </div>
         <div className="label">
           <div className="label-holder">
@@ -130,11 +133,8 @@ function Medical_label() {
             <img src={"icons/unverified.svg"} />
             </button>
           </div>
-          
-          
-
+          <h2 style={{ color: 'white' }}>Related Post</h2>
           <div className="related-post">
-            <h2 style={{ color: 'white' }}>Related Post</h2>
             {/* <tr>
               <th>No</th>
               <th>Content</th>
@@ -147,11 +147,17 @@ function Medical_label() {
                 <RelationdataItem index={index + 1} group={group} />
               ))}
             </table>
-
+          </div>
+          <div className="buttons_container">
+            <button>
+              <BiChevronLeft size={30} color="#fff"/>
+            </button>
+            <button>
+              <BiChevronRight size={30} color="#fff"/>
+            </button>
           </div>
         </div>
       </div>
-    </div>
   );
 }
 export default Medical_label;
