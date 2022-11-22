@@ -1,3 +1,6 @@
+import {
+    FaExternalLinkAlt
+  } from "react-icons/fa";
 let dict = [
     {
     name: "Gojo Satoru",
@@ -17,4 +20,66 @@ let comment =[
         avatar:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-rBpdBlrbVWYIxrXzWhl4hAd0N_XzmHYrWQ&usqp=CAU"
     },
 ];
-export{dict, comment};
+
+/*Related posts*/
+const groupData = [
+    {
+      id: "Lorem ipsum dolor sit amet, consectetur adipiscing",
+      status: "Disagree",
+      link: <FaExternalLinkAlt/>,
+  
+    },
+    {
+      id: "Lorem ipsum",
+      status: "Agree",
+      link: <FaExternalLinkAlt/>,
+    },
+    {
+      id: "Lorem ipsum",
+      status: "Disagree",
+      link: <FaExternalLinkAlt/>,
+  
+    },
+    {
+      id: "Lorem ipsum dolor sit amet, consectetur adipiscing",
+      status: "Disagree",
+      link: <FaExternalLinkAlt/>,
+  
+    },
+    {
+      id: "Lorem ipsum dolor sit amet, consectetur adipiscing",
+      status: "Disagree",
+      link: <FaExternalLinkAlt/>,
+  
+    },
+    {
+      id: "Lorem ipsum dolor sit amet, consectetur adipiscing",
+      status: "Disagree",
+      link: <FaExternalLinkAlt/>,
+  
+    },
+    {
+      id: "Lorem ipsum",
+      status: "Agree",
+      link: <FaExternalLinkAlt/>,
+    },
+    {
+      id: "Lorem ipsum",
+      status: "Disagree",
+      link: <FaExternalLinkAlt/>,
+  
+    },
+    {
+      id: "Lorem ipsum dolor sit amet, consectetur adipiscing",
+      status: "Disagree",
+      link: <FaExternalLinkAlt/>,
+  
+    },
+    {
+      id: "Lorem ipsum dolor sit amet, consectetur adipiscing",
+      status: "Disagree",
+      link: <FaExternalLinkAlt/>,
+  
+    },
+  ]
+export{dict, comment, groupData};
