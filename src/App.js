@@ -9,14 +9,15 @@ import News_label from './pages/news-label';
 import Export from './pages/Export';
 import Login from './pages/Login';
 import News from './pages/News';
+import {useState} from "react"
 
 
 function App() {
+  const [auth, setAuth] = useState(false);
 
-  if(false) {
-    return <Login />
-  }
-  return (
+  if(!auth){
+    return <Login setAuth={setAuth}/>
+  }else return (
     <div>
       <SideBar />
       <MainContent>

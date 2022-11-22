@@ -207,7 +207,7 @@ const Dashboard = () => {
       med_size: 45,
       true_size: 23,
       fake_size: 22,
-      verified: "0 (0.00%)" 
+     verified: "0 (0.00%)" 
     },
     {
       id: "123123",

@@ -7,57 +7,54 @@ import { Fade } from 'react-slideshow-image';
 /*Slideshow image*/
 const fadeImages = [
     {
-    url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpabf3c66yZMHAtXV6ug3rAhZcqT6PVCKdY82ru75R176_VyyuheCD4xs7uJGyFBSFPEo&usqp=CAU',
-    caption: 'First Slide'
+    url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/HCMUT_official_logo.png/760px-HCMUT_official_logo.png',
     },
     {
-    url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTW4cZ9lOOOu6h6acWTDqK20-fAUsvFAuLaYGHOh4bOJAWY2Nf9ObSpMt8lpY2k53OJAUs&usqp=CAU      ',
-    caption: 'Second Slide'
-    },
-    {
-    url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkRBzxV4cHkciHpXZ4KPgbxJgWphuUaq6lXxhX4Foc3itxYw0eBsW-9yQVDl2s6yGHF38&usqp=CAU',
-    caption: 'Third Slide'
+    url: 'https://oisp.hcmut.edu.vn/oep/static/media/oisp-nav-logo.2aaf02f9.png',
     },
 ];
 
 
-   export default function Login() {
-    return (
-        <div className="container">
-            <div className="slideshow">
-                <div className="slide-container">
-                    <Fade>
-                        {fadeImages.map((fadeImage, index) => (
-                        <div className="each-fade" key={index}>
-                            <div className="image-container">
-                            <img src={fadeImage.url} />
-                            </div>
-                        </div>
-                        ))}
-                    </Fade>
-                </div>
-            </div>
-            <div className="login">
-              <div className="login-wrapper">
-                  <h1>Please Log In</h1>
-                  <form >
-                    <div className="form-group">
-                      <input type="text" name="username"  placeholder="Username"/>
-                    </div>
-                    <div className="form-group">
-                        <input type="password" name="user_password"  placeholder="Password"/>
-                    </div>
-                    <div className="tick">
-                        <input type="checkbox" name="remember-me" />
-                        <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember password ?</label>
-                    </div>
-                    <div className="form-button">
-                        <input type="submit" name="signin" value="LOGIN"/>
-                        <div className="form-button__register"><p>Don't have an account ?</p><a href="">Register</a></div>
-                    </div>
-                  </form>
+export default function Login({setAuth}) {
+  const handleAuthentication = (e) => {
+    e.preventDefault()
+    console.log(e.target.username.value)
+    console.log(e.target.password.value)
+    // axios get to heroku to return a true false value then set for 
+  }
+  // <div className="container">
+  //     <div className="slideshow">
+  //         <div className="slide-container">
+  //             <Fade arrows={false} indicators={true}>
+  //                 {fadeImages.map((fadeImage, index) => (
+  //                 <div className="each-fade" key={index}>
+  //                     <div className="image-container">
+  //                     <img src={fadeImage.url} />
+  //                     </div>
+  //                 </div>
+  //                 ))}
+  //             </Fade>
+  //         </div>
+  //     </div>
+  //
+  return (
+        <div className="login">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/HCMUT_official_logo.png/760px-HCMUT_official_logo.png" />
+        <div className="login-wrapper">
+            <h1>Welcome back!</h1>
+            <form onSubmit={(e)=>{handleAuthentication(e)}}>
+              <div className="form-group">
+                <input type="text" name="username"  placeholder="Username"/>
               </div>
-            </div>
+              <div className="form-group">
+                  <input type="password" name="password"  placeholder="Password"/>
+              </div>
+              <div className="form-button">
+                <button>Login</button>
+                <button>Register</button>
+              </div>
+            </form>
         </div>
-    )
+      </div>
+  )
 }
