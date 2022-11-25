@@ -1,0 +1,93 @@
+.inactive-label-button:hover {
+    box-shadow: 0 0px 0px 1.5px rgb(255, 255, 255);
+}
+
+.label button span:first-of-type {
+    padding-top: 15%;
+    font-size: 1.5em;
+    line-height: 1.2;
+    font-weight: 545;
+}
+
+.label button img {
+    position: absolute;
+    top: 20%;
+    width: 20%;
+}
+
+.active-label-button
+{
+    box-shadow: 0 0px 0px 3px rgb(255, 255, 255);
+}
+
+.active-label-button span{
+    display: block;
+    color: white;
+    line-height: 1;
+    text-align: center;
+    font-weight: lighter;
+    font-size: 15px;
+}
+
+.active-label-button.medical {
+    background-color: #366BD5;
+}
+
+.active-label-button.nonmed {
+    background-color: #3CD5EB;
+}
+
+.active-label-button.true {
+    background-color: #20DD59;
+}
+
+.active-label-button.false {
+    background-color: #F74242;
+}
+
+.active-label-button.verified {
+    background-color: #9E3EE0;
+}
+
+.active-label-button.unverified {
+    background-color: #AEAEAE;
+}
+
+.inactive-label-button.medical {
+    background-color: #395b9f;
+}
+
+.inactive-label-button.nonmed {
+    background-color: #51a5b1;
+}
+
+.inactive-label-button.true {
+    background-color: #3bbb61;
+}
+
+.inactive-label-button.false {
+    background-color: #bb5959;
+}
+
+.inactive-label-button.verified {
+    background-color: #945aba;
+}
+
+.inactive-label-button.unverified {
+    background-color: #5f5f5f;
+}
+
+.inactive-label-button span {
+    opacity: 0.5;
+    display: block;
+    color: white;
+    line-height: 1;
+    text-align: center;
+    font-weight: lighter;
+    font-size: 15px;
+}
+
+.inactive-label-button{
+    opacity: 0.5;
+}
+
