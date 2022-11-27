@@ -1,3 +1,5 @@
+import axios from "axios";
+import { useEffect } from "react";
 import DashBoardChart from "../components/DashBoardChart/DashBoardChart";
 import DashboardStyle from "./Dashboard.module.css"
 
@@ -15,6 +17,12 @@ const DashBoardItem = ({index, group}) => {
 }
 
 const Dashboard = () => {
+  useEffect(()=>{
+    axios.get("https://doancnpmtest.herokuapp.com/posts/total_view")
+    .then((res)=>{
+        console.log(res)
+      })
+  }, [])
   const firstChartData = [
     { title: "Medical", value: 1978, color: "#1f5fe0" },
     { title: "Nonmed", value: 3568, color: "#5acedf" },

@@ -7,15 +7,20 @@ import Medical_label from './pages/medical-label';
 import Export from './pages/Export';
 import Login from './pages/Login';
 import News from './pages/News';
-import {useState} from "react"
+import {useEffect, useState} from "react"
 
 
 function App() {
   const [auth, setAuth] = useState(true);
 
+  // useEffect(()=>{
+  //   setAuth(sessionStorage.getItem("auth"))
+  // }, [])
+
   if(!auth){
     return <Login setAuth={setAuth}/>
-  }else return (
+  }
+  return (
     <div>
       <SideBar />
       <MainContent>

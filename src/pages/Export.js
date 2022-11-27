@@ -7,6 +7,8 @@ import {
 } from "react-icons/fa";
 import { useRipple } from "react-use-ripple";
 import { useRef } from "react";
+import axios from "axios";
+import fileDownload from "js-file-download";
 
 function Export() {
   const newsCSVButtonRef = useRef();
@@ -19,6 +21,22 @@ function Export() {
   useRipple(commentsCSVButtonRef, { animationLength: 300, rippleColor: "#7080a9" });
   useRipple(commentsJSONButtonRef, { animationLength: 300, rippleColor: "#7080a9" });
 
+  const handleNewsCSV = (e) => {
+    e.preventDefault();
+    axios.get("https://doancnpmtest.herokuapp.com/posts/download_as_csv")
+    .then(res=>{
+        fileDownload(res.data, "posts.csv")
+      })
+  }
+
+  const handleNewsJSON = (e) => {
+    e.preventDefault();
+    axios.get("https://doancnpmtest.herokuapp.com/posts/download_as_json")
+    .then(res=>{
+        fileDownload(res.data, "posts.json")
+      })
+  }
+
   return (
     <div className="wrapper">
       <div className="box">
@@ -29,11 +47,13 @@ function Export() {
           </div>
           <div className="all-file1">
             <form>
-              <button className="file" ref={newsCSVButtonRef}>
+              <button className="file" ref={newsCSVButtonRef}
+                onClick={e => {handleNewsCSV(e)}}>
                 <FaAlignLeft style={{ marginTop: "40px" }} />
                 <p className="export-file-type"> As CSV </p>
               </button>
-              <button className="file" ref={newsJSONButtonRef}>
+              <button className="file" ref={newsJSONButtonRef}
+                onClick={e => {handleNewsJSON(e)}}>
                 <FaRegWindowMaximize style={{ marginTop: "40px" }} />
                 <p className="export-file-type"> As JSON </p>
               </button>

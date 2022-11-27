@@ -1,6 +1,6 @@
 import "./Login.css"
 import 'react-slideshow-image/dist/styles.css'
-import { Fade } from 'react-slideshow-image';
+import axios from "axios";
 
 
 
@@ -16,27 +16,20 @@ const fadeImages = [
 
 
 export default function Login({setAuth}) {
+
   const handleAuthentication = (e) => {
     e.preventDefault()
-    console.log(e.target.username.value)
-    console.log(e.target.password.value)
     // axios get to heroku to return a true false value then set for 
+    axios.post('https://doancnpmtest.herokuapp.com/login/authenticate', {
+      params: {
+        userAccount: e.target.username.value,
+        userPassword: e.target.username.password
+      }
+    }).then((res)=>{
+        sessionStorage.setItem("auth", res.data.status)
+        setAuth(res.data.status)
+      })
   }
-  // <div className="container">
-  //     <div className="slideshow">
-  //         <div className="slide-container">
-  //             <Fade arrows={false} indicators={true}>
-  //                 {fadeImages.map((fadeImage, index) => (
-  //                 <div className="each-fade" key={index}>
-  //                     <div className="image-container">
-  //                     <img src={fadeImage.url} />
-  //                     </div>
-  //                 </div>
-  //                 ))}
-  //             </Fade>
-  //         </div>
-  //     </div>
-  //
   return (
         <div className="login">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/HCMUT_official_logo.png/760px-HCMUT_official_logo.png" />
