@@ -7,17 +7,18 @@ import {
   MdOutlineFileDownload,
 } from "react-icons/md";
 import { useState } from "react";
+import {Link} from "react-router-dom"
 
 const SideBarItem = ({ Item, page, onHover, href }) => {
   return (
-    <a className="sidebar_link" href={href}>
+    <Link className="sidebar_link" to={href} >
       <div className="sidebar_item">
         {<Item className="sidebar_img" />}
         <h3 style={onHover ? { display: "block" } : { display: "none" }}>
           {page}
         </h3>
       </div>
-    </a>
+    </Link>
   );
 };
 

@@ -11,28 +11,28 @@ import {useEffect, useState} from "react"
 
 
 function App() {
-  const [auth, setAuth] = useState(true);
+  const [auth, setAuth] = useState(false);
 
-  // useEffect(()=>{
-  //   setAuth(sessionStorage.getItem("auth"))
-  // }, [])
+  useEffect(()=>{
+    setAuth(sessionStorage.getItem("auth"))
+  }, [])
 
   if(!auth){
     return <Login setAuth={setAuth}/>
   }
   return (
     <div>
-      <SideBar />
-      <MainContent>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/news" element={<News />} />
-            <Route path="/med-label" element={<Medical_label />} />
-            <Route path="/export" element={<Export />} />
-          </Routes>
-        </BrowserRouter>
-      </MainContent>
+      <BrowserRouter>
+        <SideBar />
+        <MainContent>
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/news" element={<News />} />
+          <Route path="/med-label" element={<Medical_label />} />
+          <Route path="/export" element={<Export />} />
+        </Routes>
+        </MainContent>
+      </BrowserRouter>
     </div>
   );
 }
