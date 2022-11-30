@@ -92,14 +92,14 @@ function DashBoardChart(props) {
         }}
       />
 
-      <div class="labels">
-        <div class="column">
+      <div className="labels">
+        <div className="column">
           <Pill type={data[2].title} color={data[2].color}/>
         </div>
-        <div class="column">
+        <div className="column">
           <Pill type={data[1].title} color={data[1].color} mid={true} />
         </div>
-        <div class="column">
+        <div className="column">
           <Pill type={data[0].title} color={data[0].color}/>
         </div>
       </div>

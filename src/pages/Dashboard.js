@@ -20,7 +20,7 @@ const Dashboard = () => {
   useEffect(()=>{
     axios.get("https://doancnpmtest.herokuapp.com/posts/total_view")
     .then((res)=>{
-        console.log(res)
+        // console.log(res)
       })
   }, [])
   const firstChartData = [
@@ -408,7 +408,7 @@ const Dashboard = () => {
           <th>Verified</th>
         </tr>
         {groupData.map((group, index) => (
-          <DashBoardItem index={index+1} group={group} />  
+          <DashBoardItem index={index+1} group={group} key={index} />  
         ))}
       </table>
   </div>

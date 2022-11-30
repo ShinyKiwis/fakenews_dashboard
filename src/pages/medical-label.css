@@ -261,7 +261,17 @@ hr {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 2em;
+  margin-top: 0.5em;
 }
+
+.buttons_container span{
+    width: 10em;
+    color: white;
+    font-weight: 500;
+}
+
+
 
 .buttons_container button {
   background-color: transparent;
