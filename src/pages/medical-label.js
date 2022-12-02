@@ -9,9 +9,11 @@ const RelationdataItem = ({ index, group }) => {
   return (
     <tr>
       <td>{index}</td>
-      <td>{group.id}</td>
-      <td>{group.status}</td>
-      <td>{group.link}</td>
+      <td>{group.title}</td>
+      {group.degree ===1 &&<td>disagree</td>}
+      {group.degree ===2 &&<td>neutral</td>}
+      {group.degree ===3 &&<td>agree</td>}
+      <td>{group.url}</td>
     </tr>
   );
 };
@@ -26,6 +28,8 @@ function MedicalLabel({posts, fetchPosts, page, setPage}) {
   const [trueOrFalse, setTrueOrFalse] = useState("none");
   const [verifiedOrUnverified, setVerifiedOrUnverified] = useState("none");
 
+  const [relatedPostArray, updateRelatedPostArray] = useState([])
+
   const actions = [
     "like",
     "love",
@@ -37,6 +41,36 @@ function MedicalLabel({posts, fetchPosts, page, setPage}) {
     "comment",
     "share",
   ];
+
+
+
+
+
+
+
+  const idOfModelPost = '636b9460170981d51cb40557'
+
+  const getRelatedPost = () => {
+    let post_id = labelPosts[currentPost]["_id"]['$oid'].toString()
+    axios.post(`http://doancnpmtest.herokuapp.com/posts/related/${idOfModelPost}`, {
+      // params: {
+      //   verifyNews: verifiedOrUnverified === "left" ? "true": "false",
+      //   medicalNews: medicalOrNonmed === "left" ? "true": "false",
+      //   fakeNews: trueOrFalse === "left" ? "true": "false",
+      //   humanCheck: "true"
+      // }
+    }).then(res => {
+      console.log("this is data",res.data)
+      updateRelatedPostArray(res.data)
+    })
+    // setMedicalOrNonmed("none")
+    // setTrueOrFalse("none")
+    // setVerifiedOrUnverified("none")
+
+  }
+
+
+  useEffect(getRelatedPost,[])
 
 
   const handlePrev = () => {
@@ -158,8 +192,25 @@ function MedicalLabel({posts, fetchPosts, page, setPage}) {
         <h2 style={{ color: "white" }}>Related Post</h2>
         <div className="related-post">
           <table className="relation-table">
-            {groupData.map((group, index) => (
-              <RelationdataItem index={index + 1} group={group} />
+            <tr>
+              <td style={{alignText:"center"}}>No.</td>
+              <td > 
+                <div style={{display:"flex",justifyContent:"center"}}>
+                  <div>Tittle</div>
+                </div>
+              </td>
+              <td >Relation</td>
+              <td>
+                <div style={{display:"flex",justifyContent:"center"}}>
+                  <div>
+                  URL
+                  </div>
+                </div>
+              </td>
+            </tr>
+            {/* //groupmap instead of  realatedPostArray */}
+            {relatedPostArray.map((element, index) => (
+              <RelationdataItem index={index + 1} group={element} />
               ))}
           </table>
         </div>
