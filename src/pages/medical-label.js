@@ -13,7 +13,12 @@ const RelationdataItem = ({ index, group }) => {
       {group.degree ===1 &&<td>disagree</td>}
       {group.degree ===2 &&<td>neutral</td>}
       {group.degree ===3 &&<td>agree</td>}
-      <td>{group.url}</td>
+      {/* <td><a href={group.url} target="_blank">URL</a></td> */}
+      <td>
+        <a href={group.url} target="_blank">
+          <div style={{backgroundImage:"url(https://mpng.subpng.com/20190425/oyu/kisspng-computer-icons-portable-network-graphics-scalable-serp-connect-5cc1c74425e116.2706942715562033321552.jpg)", width:"30px", height:"30px", backgroundSize:"contain"}}></div>
+        </a>
+      </td>
     </tr>
   );
 };
