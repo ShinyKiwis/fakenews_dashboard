@@ -57,7 +57,7 @@ function MedicalLabel({posts, fetchPosts, page, setPage}) {
 
   const getRelatedPost = () => {
     let post_id = labelPosts[currentPost]["_id"]['$oid'].toString()
-    axios.post(`http://doancnpmtest.herokuapp.com/posts/related/${idOfModelPost}`, {
+    axios.post(`http://localhost:5000/posts/related/${idOfModelPost}`, {
       // params: {
       //   verifyNews: verifiedOrUnverified === "left" ? "true": "false",
       //   medicalNews: medicalOrNonmed === "left" ? "true": "false",
@@ -84,7 +84,7 @@ function MedicalLabel({posts, fetchPosts, page, setPage}) {
 
   const handleSubmit = () => {
     let post_id = labelPosts[currentPost]["_id"]['$oid'].toString()
-    axios.post(`http://doancnpmtest.herokuapp.com/posts/update/${post_id}`, {
+    axios.post(`http://localhost:5000/posts/update/${post_id}`, {
       params: {
         verifyNews: verifiedOrUnverified === "left" ? "true": "false",
         medicalNews: medicalOrNonmed === "left" ? "true": "false",

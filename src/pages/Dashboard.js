@@ -18,7 +18,7 @@ const DashBoardItem = ({index, group}) => {
 
 const Dashboard = () => {
   useEffect(()=>{
-    axios.get("https://doancnpmtest.herokuapp.com/posts/total_view")
+    axios.get("http://localhost:5000/posts/total_view")
     .then((res)=>{
         // console.log(res)
       })

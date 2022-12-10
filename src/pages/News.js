@@ -32,7 +32,7 @@ const PostItem = ({ postContent, groupID, type, validity }) => {
 const News = () => {
   const [posts, setPosts] = useState([])
   useEffect(()=>{
-    axios.get("https://doancnpmtest.herokuapp.com/posts/page/1")
+    axios.get("http://localhost:5000/posts/page/1")
     .then(res=> {
         setPosts(res.data)
       })

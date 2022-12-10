@@ -23,7 +23,7 @@ function Export() {
 
   const handleNewsCSV = (e) => {
     e.preventDefault();
-    axios.get("https://doancnpmtest.herokuapp.com/posts/download_as_csv")
+    axios.get("http://localhost:5000/posts/download_as_csv")
     .then(res=>{
         fileDownload(res.data, "posts.csv")
       })
@@ -31,7 +31,7 @@ function Export() {
 
   const handleNewsJSON = (e) => {
     e.preventDefault();
-    axios.get("https://doancnpmtest.herokuapp.com/posts/download_as_json")
+    axios.get("http://localhost:5000/posts/download_as_json")
     .then(res=>{
         fileDownload(res.data, "posts.json")
       })

@@ -17,7 +17,7 @@ function App() {
   const [page, setPage] = useState(1)
 
   async function fetchPosts(page) {
-    const res = await axios.get(`https://doancnpmtest.herokuapp.com/posts/page/${page}`)
+    const res = await axios.get(`http://localhost:5000/posts/page/${page}`)
     setPosts([...posts, ...res.data])
   }
   useEffect(()=>{
