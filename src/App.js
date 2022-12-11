@@ -36,7 +36,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/news" element={<News />} />
-          <Route path="/med-label" element={<MedicalLabel posts={posts} fetchPosts={fetchPosts} page={page} setPage={setPage}/>} />
+          <Route path="/med-label" element={<MedicalLabel posts={posts} setPosts={setPosts} fetchPosts={fetchPosts} page={page} setPage={setPage}/>} />
           <Route path="/export" element={<Export />} />
         </Routes>
         </MainContent>

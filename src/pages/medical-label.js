@@ -23,15 +23,26 @@ const RelationdataItem = ({ index, group }) => {
   );
 };
 
-function MedicalLabel({posts, fetchPosts, page, setPage}) {
+function MedicalLabel({posts, setPosts, fetchPosts, page, setPage}) {
   const [labelPosts, setLabelPosts] = useState(posts.filter(post=> post.is_auto === false))
   const [currentPost, setCurrentPost] = useState(0)
   useEffect(()=>{
     setLabelPosts(posts.filter(post=> post.is_auto === false))
   }, [posts])
+
+  useEffect(()=> {
+    console.log(labelPosts[currentPost].humanCheck)
+    if(labelPosts[currentPost].humanCheck){
+      setMedicalOrNonmed(labelPosts[currentPost].is_medical ? "left": "right")
+      setTrueOrFalse(labelPosts[currentPost].is_fakenew ? "left": "right");
+      setVerifiedOrUnverified(labelPosts[currentPost].is_verify_fakenew ? "left" : "right")
+    }
+  }, [currentPost])
+
   const [medicalOrNonmed, setMedicalOrNonmed] = useState("none");
   const [trueOrFalse, setTrueOrFalse] = useState("none");
   const [verifiedOrUnverified, setVerifiedOrUnverified] = useState("none");
+  console.log(verifiedOrUnverified, medicalOrNonmed, trueOrFalse)
 
   const [relatedPostArray, updateRelatedPostArray] = useState([])
 
@@ -46,7 +57,6 @@ function MedicalLabel({posts, fetchPosts, page, setPage}) {
     "comment",
     "share",
   ];
-
 
 
 
@@ -99,13 +109,28 @@ function MedicalLabel({posts, fetchPosts, page, setPage}) {
     setVerifiedOrUnverified("none")
   }
 
+
   const handleNext = () => {
     // Get more post 
     handleSubmit()
+    setLabelPosts(labelPosts.map((post,idx) => {
+      if(idx === currentPost) {
+        return {
+          ...post,
+          is_verify_fakenew: verifiedOrUnverified === "left" ? true: false,
+          is_medical: medicalOrNonmed === "left" ? true: false,
+          is_fakenew: trueOrFalse === "left" ? true: false,
+          humanCheck: "true"
+        }
+      }else{
+        return post
+      }
+    }))
     if(currentPost === labelPosts.length-2){
       fetchPosts(page+1)
       setPage(page+1)
     }
+    // Update the current post 
     setCurrentPost(Math.min(currentPost+1, labelPosts.length-1))
   }
 
