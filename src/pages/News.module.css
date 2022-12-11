@@ -87,6 +87,29 @@
     cursor: pointer;
 }
 
-.post_item {
+.container ul{
+    display:flex;
+    list-style-type: none;
+    position:absolute;
+    left: 50%;
+    top:94%;
+	transform: translate(-50%, -50%);
 }
-
+.container ul li{
+    margin:0em .5em;
+    background-color: #d2d2d2;
+    padding:.5em 0em;
+    width:2.5em;
+    text-align: center;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 0 1px #2a344e;
+}
+.container ul li:hover{
+    box-shadow: 0 0 0 3px #2a344e;
+}
+.container ul li:active{
+    background-color: #2a344e;
+    color: white;
+}

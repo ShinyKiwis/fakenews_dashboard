@@ -3,31 +3,101 @@ import NewsStyle from "./News.module.css";
 import { HiPencil, HiFlag } from "react-icons/hi";
 import {useState, useEffect} from "react"
 import axios from "axios";
+import ReactPaginate from 'react-paginate';
+import ReactDOM from 'react-dom';
 
-const PostItem = ({ postContent, groupID, type, validity }) => {
+
+function Items({ currentItems }) {
+  const [posts, setPosts] = useState([])
+  useEffect(()=>{
+    axios.get("http://localhost:5000/posts/page/1")
+    .then(res=> {
+        setPosts(res.data)
+      })
+  }, [])
   return (
-    <tr className={NewsStyle.post_item}>
-      <td>{postContent}</td>
-      <td>{groupID}</td>
-      <td style={{ paddingRight: "1em" }}>
-        <Pill type={type} />
-      </td>
-      <td>
-        <div className={NewsStyle.post_edit}>
-          <Pill type={validity} />
-          <HiPencil
-            className={NewsStyle.post_icon}
-            style={{ color: "#2A344E" }}
-          />
-          <HiFlag
-            className={NewsStyle.post_icon}
-            style={{ color: "#2A344E" }}
-          />
-        </div>
-      </td>
-    </tr>
+    <>
+      {currentItems &&
+        currentItems.map((posts) => (
+          /*<PostItem
+            postContent={post.text}
+            groupID="123123asd123"
+            type={post.is_medical ? "Medical": "Nonmed"}
+            validity={post.is_verify_fakenew ? (post.is_fakenew ? "False": "True" ) : "Unverified"}
+          />*/
+          <tr className={NewsStyle.post_item}>
+            <td>{posts.text}</td>
+            <td>{"123123asd123"}</td>
+            <td style={{ paddingRight: "1em" }}>
+              <Pill type={posts.is_medical ? "Medical": "Nonmed"} />
+            </td>
+            <td>
+              <div className={NewsStyle.post_edit}>
+                <Pill type={posts.is_verify_fakenew ? (posts.is_fakenew ? "False": "True" ) : "Unverified"} />
+                <HiPencil
+                  className={NewsStyle.post_icon}
+                  style={{ color: "#2A344E" }}
+                />
+                <HiFlag
+                  className={NewsStyle.post_icon}
+                  style={{ color: "#2A344E" }}
+                />
+              </div>
+            </td>
+          </tr>
+          
+        ))}
+    </>
   );
-};
+}
+
+function PaginatedItems({ itemsPerPage }) {
+  const [posts, setPosts] = useState([])
+  useEffect(()=>{
+    axios.get("http://localhost:5000/posts/page/1")
+    .then(res=> {
+        setPosts(res.data)
+      })
+  }, [])
+  // Here we use item offsets; we could also use page offsets
+  // following the API or data you're working with.
+  const [itemOffset, setItemOffset] = useState(0);
+
+  // Simulate fetching items from another resources.
+  // (This could be items from props; or items loaded in a local state
+  // from an API endpoint with useEffect and useState)
+  const endOffset = itemOffset + itemsPerPage;
+  console.log(`Loading items from ${itemOffset} to ${endOffset}`);
+  const currentItems = posts.slice(itemOffset, endOffset);
+  const pageCount = Math.ceil(posts.length / itemsPerPage);
+
+  // Invoke when user click to request another page.
+  const handlePageClick = (event) => {
+    const newOffset = (event.selected * itemsPerPage) % posts.length;
+    console.log(
+      `User requested page number ${event.selected}, which is offset ${newOffset}`
+    );
+    setItemOffset(newOffset);
+  };
+
+  return (
+    <>
+      <Items currentItems={currentItems} />
+      <ReactPaginate
+        breakLabel="..."
+        nextLabel=">"
+        onPageChange={handlePageClick}
+        pageRangeDisplayed={5}
+        pageCount={pageCount}
+        previousLabel="<"
+        renderOnZeroPageCount={null}
+      />
+    </>
+  );
+}
+
+
+
 
 const News = () => {
   const [posts, setPosts] = useState([])
@@ -37,6 +107,8 @@ const News = () => {
         setPosts(res.data)
       })
   }, [])
+
+
   // const posts = [
   //   {
   //     postContent:
@@ -304,14 +376,8 @@ const News = () => {
           <th style={{ width: "10%" }}>Type</th>
           <th style={{ width: "20%" }}>Validity</th>
         </tr>
-        {posts.map((post) => (
-          <PostItem
-            postContent={post.text}
-            groupID="123123asd123"
-            type={post.is_medical ? "Medical": "Nonmed"}
-            validity={post.is_verify_fakenew ? (post.is_fakenew ? "False": "True" ) : "Unverified"}
-          />
-        ))}
+        <PaginatedItems itemsPerPage={8} />,
+        <div id="container"></div>
       </table>
     </div>
   );

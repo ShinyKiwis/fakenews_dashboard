@@ -25,9 +25,9 @@ function App() {
     fetchPosts(page)
   }, [])
 
-  if(!auth){
+  /*if(!auth){
     return <Login setAuth={setAuth}/>
-  }
+  }*/
   return (
     <div>
       <BrowserRouter>
