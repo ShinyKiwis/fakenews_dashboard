@@ -5,9 +5,12 @@ import {useState, useEffect} from "react"
 import axios from "axios";
 import ReactPaginate from 'react-paginate';
 import ReactDOM from 'react-dom';
+import {Link} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+  
+ 
 
-
-function Items({ currentItems }) {
+function Items({ currentItems, setClickedPost}) {
   const [posts, setPosts] = useState([])
   useEffect(()=>{
     axios.get("http://localhost:5000/posts/page/1")
@@ -15,6 +18,14 @@ function Items({ currentItems }) {
         setPosts(res.data)
       })
   }, [])
+
+  let navigate = useNavigate();
+  const navigateToLabeling = async (postId) =>{ 
+    const res = await axios.get("http://localhost:5000/posts/single_post/" + "638394cd5c0efd3b9b71b2e8")
+    // setClickedPost(res.data)
+    navigate("/med-label");
+  }
+  
   return (
     <>
       {currentItems &&
@@ -25,7 +36,7 @@ function Items({ currentItems }) {
             type={post.is_medical ? "Medical": "Nonmed"}
             validity={post.is_verify_fakenew ? (post.is_fakenew ? "False": "True" ) : "Unverified"}
           />*/
-          <tr className={NewsStyle.post_item}>
+          <tr className={NewsStyle.post_item} onClick={() => navigateToLabeling(posts.id)}>
             <td>{posts.text}</td>
             <td>{"123123asd123"}</td>
             <td style={{ paddingRight: "1em" }}>
