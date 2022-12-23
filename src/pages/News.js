@@ -65,7 +65,7 @@ function Items({ currentItems, setClickedPost}) {
 function PaginatedItems({ itemsPerPage }) {
   const [posts, setPosts] = useState([])
   useEffect(()=>{
-    axios.get("http://localhost:5000/posts/page/1")
+    axios.get("http://localhost:5000/posts/page/0")
     .then(res=> {
         setPosts(res.data)
       })

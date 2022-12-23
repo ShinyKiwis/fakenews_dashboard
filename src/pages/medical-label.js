@@ -24,10 +24,13 @@ const RelationdataItem = ({ index, group }) => {
 };
 
 function MedicalLabel({posts, setPosts, fetchPosts, page, setPage}) {
-  const [labelPosts, setLabelPosts] = useState(posts.filter(post=> post.is_auto === false))
+  console.log('this is inside medical',posts)
+  // const [labelPosts, setLabelPosts] = useState(posts.filter(post=> post.is_auto === true))
+  const [labelPosts, setLabelPosts] = useState(posts)
   const [currentPost, setCurrentPost] = useState(0)
   useEffect(()=>{
-    setLabelPosts(posts.filter(post=> post.is_auto === false))
+    // setLabelPosts(posts.filter(post=> post.is_auto === false))
+    setLabelPosts(posts)
   }, [posts])
 
   useEffect(()=> {
@@ -57,9 +60,6 @@ function MedicalLabel({posts, setPosts, fetchPosts, page, setPage}) {
     "comment",
     "share",
   ];
-
-
-
 
 
 

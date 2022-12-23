@@ -14,7 +14,7 @@ import axios from 'axios';
 function App() {
   const [auth, setAuth] = useState(false);
   const [posts, setPosts] = useState([]);
-  const [page, setPage] = useState(1)
+  const [page, setPage] = useState(0)
 
   async function fetchPosts(page) {
     const res = await axios.get(`http://localhost:5000/posts/page/${page}`)
